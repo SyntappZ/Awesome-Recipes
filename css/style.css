@@ -1,61 +1,174 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #ebedf1;
 }
 
-.welcome {
+header {
   width: 100%;
-  height: 100vh;
-  background: url("../images/left-food-white.jpg");
-  background-size: cover;
+  padding: 15px 0;
+  background: white;
+  position: fixed;
+  z-index: 1;
 }
 
-.welcome .nav-wrap {
-  width: 100%;
+header .title {
+  font-family: "Courgette", Courier, monospace;
+  margin: 0;
+}
+
+header .title span {
+  color: #cf2727;
+}
+
+header .nav-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
 
-.welcome .nav-wrap ul li {
-  display: inline-block;
-  padding: 20px 40px;
+header .nav-wrap nav ul {
+  margin: 0;
 }
 
-.welcome .nav-wrap ul li a {
-  color: black;
+header .nav-wrap nav ul li {
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+header .nav-wrap nav ul li:nth-child(2) {
+  padding: 0 70px;
+}
+
+header .nav-wrap nav ul li a {
+  color: #a8a8a8;
   text-decoration: none;
 }
 
-.welcome .hero {
-  width: 400px;
-  height: 400px;
-  margin: 50px auto;
-  text-align: center;
+header .nav-wrap nav ul li a:hover {
+  color: #6f5f73;
 }
 
-.welcome .hero .logo {
-  width: 150px;
+.welcome {
+  width: 100%;
+  height: 100vh;
+}
+
+.welcome .background {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../images/plates.jpg);
+  background-size: cover;
+  background-position: center center;
+  -webkit-filter: brightness(70%);
+          filter: brightness(70%);
+}
+
+.welcome .hero-wrap {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.welcome .hero-wrap .hero {
+  width: 600px;
+  height: 400px;
+  background: black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 50px;
+  text-align: center;
+  margin-top: 60px;
+  border-radius: 2px;
+  letter-spacing: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  outline: 1px solid #b3b3b3;
+  outline-offset: -30px;
+}
+
+.welcome .hero-wrap .hero p {
+  color: gray;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.welcome .hero-wrap .hero h1 {
+  color: white;
+  text-transform: capitalize;
+}
+
+.welcome .hero-wrap .hero h1 span {
+  color: #803841;
+}
+
+.welcome .hero-wrap .hero .btn {
+  color: #803841;
+  border-color: #803841;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100px;
+}
+
+.dessert-section .top {
+  width: 100%;
+  min-height: 40vh;
+  background: #803841;
+}
+
+.dessert-section .top .top-wrap {
+  position: relative;
+  width: 80%;
   margin: auto;
 }
 
-.welcome .hero .logo img {
+.dessert-section .top .top-wrap .dessert-text {
+  width: 50%;
+  min-height: 40vh;
+  padding: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+  color: #d49595;
+  font-size: 18px;
+}
+
+.dessert-section .top .top-wrap .dessert-img {
+  width: 450px;
+  height: 400px;
+  position: absolute;
+  margin: auto;
+  right: 100px;
+  bottom: -120px;
+}
+
+.dessert-section .top .top-wrap .dessert-img img {
   width: 100%;
-}
-
-.welcome .hero .text {
-  padding: 20px;
-  background-color: #6F5F73;
-  color: white;
-  margin: 20px auto;
-  border-radius: 10px;
-}
-
-.welcome .hero .text h3 {
-  font-family: 'Courgette';
-  margin: 20px 0 10px 0;
 }
 /*# sourceMappingURL=style.css.map */

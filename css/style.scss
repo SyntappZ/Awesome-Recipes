@@ -1,64 +1,157 @@
-$darkPurple: #4B4559;
-$purple: #6F5F73;
-$lightPurple: #8A7E8E;
-$grey: #EBEDF1;
+$darkPurple: #4b4559;
+$purple: #6f5f73;
+$lightPurple: #8a7e8e;
+$grey: #ebedf1;
+$darkgrey: #b3b3b3;
 $black: #333;
+$red: #cf2727;
+$blood: #803841;
 
+//Photo by Lily Banse on Unsplash
 body {
+  margin: 0;
+  padding: 0;
+  background-color: $grey;
+}
+
+header {
+  width: 100%;
+  padding: 15px 0;
+  background: white;
+  position: fixed;
+  z-index: 1;
+  .title {
+    font-family: "Courgette", Courier, monospace;
     margin: 0;
-    padding: 0;
-    //background-color: $grey;
+    span {
+      color: $red;
+    }
+  }
+  .nav-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    nav {
+      ul {
+        margin: 0;
+        li {
+          display: inline-block;
+          text-transform: capitalize;
+          &:nth-child(2) {
+            padding: 0 70px;
+          }
+
+          a {
+            color: rgb(168, 168, 168);
+            text-decoration: none;
+
+            &:hover {
+              color: $purple;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .welcome {
+  width: 100%;
+  height: 100vh;
+  .background {
     width: 100%;
     height: 100vh;
-    background: url('../images/left-food-white.jpg');
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../images/plates.jpg);
     background-size: cover;
-    
-    .nav-wrap {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-
-        ul li {
-            display: inline-block;
-            padding: 20px 40px;
-
-            a {
-                color: black;
-                text-decoration: none;
-            }
-
-        }
-    }
-
+    background-position: center center;
+    filter: brightness(70%);
+  }
+  .hero-wrap {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .hero {
-        width:400px;
-        height:400px;
-        margin:50px auto;
-        text-align:center;
-        
-        .logo {
-            width:150px;
-            margin:auto;
-
-            img {
-                width:100%;
-            }
+      width: 600px;
+      height: 400px;
+      background: rgb(0, 0, 0);
+      box-sizing: border-box;
+      padding: 50px;
+      text-align: center;
+      margin-top: 60px;
+      border-radius: 2px;
+      letter-spacing: 2px;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      align-items: center;
+      outline: 1px solid $darkgrey;
+      outline-offset: -30px;
+      p {
+        color: rgb(128, 128, 128);
+        text-transform: uppercase;
+        font-size: 13px;
+      }
+      h1 {
+        color: white;
+        text-transform: capitalize;
+        span {
+          color: $blood;
         }
-        .text{
-            padding:20px;
-            background-color:$purple; 
-            color:white;
-            margin:20px auto;
-            border-radius:10px;
-            h3 {
-                font-family: 'Courgette';
-                margin:20px 0 10px 0;
-            }
-        }
-       
+      }
+      .btn {
+        color: $blood;
+        border-color: $blood;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        width: 100px;
+      }
     }
+  }
+}
 
+.dessert-section {
+
+
+ 
+  .top {
+    width: 100%;
+    min-height: 40vh;
+    background: $blood;
+  
+
+  .top-wrap {
+    position: relative;
+    width:80%;
+    margin:auto;
+    .dessert-text {
+        width: 50%;
+        min-height:40vh;
+        padding:100px;
+         box-sizing: border-box;
+         font-family: 'Raleway', sans-serif;
+        color:rgb(212, 149, 149);
+       font-size:18px;
+        
+    }
+    .dessert-img {
+        width: 450px;
+        height: 400px;
+        position: absolute;
+        margin: auto;
+        right: 100px;
+        
+        bottom: -120px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+ 
+  
 }
