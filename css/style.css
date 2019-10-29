@@ -6,8 +6,8 @@ body {
 
 header {
   width: 100%;
-  padding: 15px 0;
-  background: white;
+  padding: 10px 0;
+  background: rgba(0, 0, 0, 0.897);
   position: fixed;
   z-index: 1;
 }
@@ -15,10 +15,11 @@ header {
 header .title {
   font-family: "Courgette", Courier, monospace;
   margin: 0;
+  color: white;
 }
 
 header .title span {
-  color: #cf2727;
+  color: #803841;
 }
 
 header .nav-wrap {
@@ -47,12 +48,8 @@ header .nav-wrap nav ul li:nth-child(2) {
 }
 
 header .nav-wrap nav ul li a {
-  color: #a8a8a8;
+  color: white;
   text-decoration: none;
-}
-
-header .nav-wrap nav ul li a:hover {
-  color: #6f5f73;
 }
 
 .welcome {
@@ -66,11 +63,11 @@ header .nav-wrap nav ul li a:hover {
   position: absolute;
   top: 0;
   left: 0;
-  background: url(../images/plates.jpg);
+  background: url(../images/background.jpg);
   background-size: cover;
   background-position: center center;
-  -webkit-filter: brightness(70%);
-          filter: brightness(70%);
+  -webkit-filter: brightness(80%);
+          filter: brightness(80%);
 }
 
 .welcome .hero-wrap {
@@ -89,7 +86,6 @@ header .nav-wrap nav ul li a:hover {
 .welcome .hero-wrap .hero {
   width: 600px;
   height: 400px;
-  background: black;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 50px;
@@ -109,8 +105,6 @@ header .nav-wrap nav ul li a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  outline: 1px solid #b3b3b3;
-  outline-offset: -30px;
 }
 
 .welcome .hero-wrap .hero p {
@@ -122,18 +116,22 @@ header .nav-wrap nav ul li a:hover {
 .welcome .hero-wrap .hero h1 {
   color: white;
   text-transform: capitalize;
+  font-size: 60px;
 }
 
 .welcome .hero-wrap .hero h1 span {
   color: #803841;
 }
 
-.welcome .hero-wrap .hero .btn {
-  color: #803841;
-  border-color: #803841;
+.welcome .hero-wrap .hero .button {
+  color: white;
+  margin: 40px;
+  background-color: #803841;
+  border: none;
+  border-radius: 50px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  width: 100px;
+  padding: 10px 40px;
 }
 
 .dessert-section .top {

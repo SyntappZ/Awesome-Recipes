@@ -1,6 +1,6 @@
 import { getData } from "./recipeData.js";
 
-const btn = document.getElementById("btn");
+const btn = document.querySelector(".button");
 
 const cuisineType = [
   "American",

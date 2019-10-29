@@ -7,7 +7,6 @@ $black: #333;
 $red: #cf2727;
 $blood: #803841;
 
-//Photo by Lily Banse on Unsplash
 body {
   margin: 0;
   padding: 0;
@@ -16,15 +15,16 @@ body {
 
 header {
   width: 100%;
-  padding: 15px 0;
-  background: white;
+  padding: 10px 0;
+  background: rgba(0, 0, 0, 0.897);
   position: fixed;
   z-index: 1;
   .title {
     font-family: "Courgette", Courier, monospace;
     margin: 0;
+    color:white;
     span {
-      color: $red;
+      color: $blood;
     }
   }
   .nav-wrap {
@@ -42,11 +42,11 @@ header {
           }
 
           a {
-            color: rgb(168, 168, 168);
+            color: rgb(255, 255, 255);
             text-decoration: none;
 
             &:hover {
-              color: $purple;
+              
             }
           }
         }
@@ -64,10 +64,10 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    background: url(../images/plates.jpg);
+    background: url(../images/background.jpg);
     background-size: cover;
     background-position: center center;
-    filter: brightness(70%);
+    filter: brightness(80%);
   }
   .hero-wrap {
     height: 100vh;
@@ -77,7 +77,7 @@ header {
     .hero {
       width: 600px;
       height: 400px;
-      background: rgb(0, 0, 0);
+    
       box-sizing: border-box;
       padding: 50px;
       text-align: center;
@@ -88,8 +88,7 @@ header {
       justify-content: space-around;
       flex-direction: column;
       align-items: center;
-      outline: 1px solid $darkgrey;
-      outline-offset: -30px;
+    
       p {
         color: rgb(128, 128, 128);
         text-transform: uppercase;
@@ -98,16 +97,20 @@ header {
       h1 {
         color: white;
         text-transform: capitalize;
+        font-size:60px;
         span {
           color: $blood;
         }
       }
-      .btn {
-        color: $blood;
-        border-color: $blood;
+      .button {
+        color: white;
+        margin:40px;
+        background-color: $blood;
+       border:none;
+        border-radius:50px;
         text-transform: uppercase;
         letter-spacing: 1px;
-        width: 100px;
+        padding:10px 40px;
       }
     }
   }
