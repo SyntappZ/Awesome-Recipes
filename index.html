@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="Description" content="Food recipe searching website">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" \
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
     <link href="https://fonts.googleapis.com/css?family=Courgette&Raleway&display=swap" rel="stylesheet">
     <!-- <script src="https://developer.edamam.com/attribution/badge.js"></script> -->
     <link rel="stylesheet" href="css/style.css">
@@ -18,79 +18,155 @@
 <body>
     <header>
         <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h3 class="title">Awesome <span>Foods</span> </h3>
-                </div>
-                <div class="col nav-wrap">
 
-                    <nav>
-                        <ul>
-                            <li><a href="#">home</a></li>
-                            <li><a href="#">recipes</a></li>
-                            <li><a href="#">search</a></li>
-                        </ul>
-                    </nav>
-                </div>
+            <h2 class="title">Awesome <span>Foods</span> </h2>
+
+            <div class="nav-wrap">
+                <nav>
+                    <ul>
+                        <li><a href="#home">home</a></li>
+                        <li><a href="#recipes">recipes</a></li>
+                        <li><a href="#search">search</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header>
-    <div class="welcome">
+    <section id="home" class="welcome-section">
         <div class="background"></div>
         <div class="container">
-            <div class="row">
-                <div class="col hero-wrap">
-                    <div class="hero">
-                        <p>welcome to awesome foods</p>
-                        <div class="text">
-                            <h1>an
-                                <span>awesome</span>
-                            </h1>
-                            <h1>food experience</h1>
-                        </div>
-                        <button class="button">recipes</button>
+
+            <div class="hero-wrap">
+                <div class="hero">
+                    <p>welcome to awesome foods</p>
+                    <div class="text">
+                        <h1>an
+                            <span>awesome</span>
+                        </h1>
+                        <h1>food experience</h1>
                     </div>
+                    <button class="button">recipes</button>
                 </div>
+
             </div>
         </div>
-    </div>
-    <div class="dessert-section">
-
+    </section>
+    <section class="dessert-section">
         <div class="top">
-            <div class="top-wrap">
+            <div class="container">
                 <div class="dessert-text">
                     <p>Finish your evening in style with a delicious chocolate or fruit, rich or light dessert.</p>
                     <p>Thousands of dessert recipes to choose from, biscuits, cakes, puddings and awesomeness.</p>
+                    <button class="button">desserts</button>
                 </div>
+                
                 <div class="dessert-img">
                     <img src="./images/cheese-cake.png" alt="dessert image">
                 </div>
             </div>
-
+            <div id="recipes"></div>
         </div>
+    </section>
+   
 
-        
+    <section class="recipe-section">
+            
 
         <div class="desserts">
             <div class="container">
-                <div class="row">
-                    <div class="col"></div>
+                <div class="text-wrap">
+                    <h2>Dessert Recipes.</h2>
+                    <p>Search thousands of yummy dessert recipes.</p>
                 </div>
-                <div class="row">
-                    <div class="col"></div>
+                <button class="button">Search Desserts</button>
+                <div class="card-wrap">
+                    <div class="card">
+                        <div class="img-one"></div>
+                        <p>cheese cake</p>
+                    </div>
+                    <div class="card">
+                        <div class="img-two"></div>
+                        <p>doughnuts</p>
+                    </div>
+                    <div class="card">
+                        <div class="img-three"></div>
+                        <p>flapjacks</p>
+                    </div>
+                    <div class="card">
+                        <div class="img-four"></div>
+                        <p>cupcakes</p>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col"></div>
+
+            </div>
+        </div>
+
+        <div class="main-course">
+            <div class="container">
+                <div class="text-wrap">
+                    <h2>Main Course Recipes.</h2>
+                    <p>Search thousands of main course meals.</p>
+                </div>
+                <button class="button">Search Meals</button>
+                <div class="card-wrap">
+                    <div class="card">
+                        <div class="img-one"></div>
+                        <p>cheese cake</p>
+                    </div>
+                    <div class="card">
+                        <div class="img-two"></div>
+                        <p>doughnuts</p>
+                    </div>
+                    <div class="card">
+                        <div class="img-three"></div>
+                        <p>flapjacks</p>
+                    </div>
+                    <div class="card">
+                        <div class="img-four"></div>
+                        <p>cupcakes</p>
+                    </div>
                 </div>
             </div>
         </div>
 
-    </div>
+        <div class="breakfast">
+                <div class="container">
+                    <div class="text-wrap">
+                        <h2>Breakfast Recipes.</h2>
+                        <p>Search thousands of awesome breakfasts.</p>
+                    </div>
+                    <button class="button">Search Breakfasts</button>
+                    <div class="card-wrap">
+                        <div class="card">
+                            <div class="img-one"></div>
+                            <p>cheese cake</p>
+                        </div>
+                        <div class="card">
+                            <div class="img-two"></div>
+                            <p>doughnuts</p>
+                        </div>
+                        <div class="card">
+                            <div class="img-three"></div>
+                            <p>flapjacks</p>
+                        </div>
+                        <div class="card">
+                            <div class="img-four"></div>
+                            <p>cupcakes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section id="search" class="search-section">
+
+    </section>
 
 
 
     <!-- <button id="btn">get request</button> -->
     <!-- <div id="edamam-badge" data-color="white"></div> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/force-js/0.1.3/force.min.js"></script>
     <script type="module" src="js/main.js"></script>
 </body>
 

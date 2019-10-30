@@ -1,8 +1,6 @@
-$darkPurple: #4b4559;
-$purple: #6f5f73;
-$lightPurple: #8a7e8e;
-$grey: #ebedf1;
-$darkgrey: #b3b3b3;
+
+$grey: #e2e2e2;
+$darkgrey: #747474;
 $black: #333;
 $red: #cf2727;
 $blood: #803841;
@@ -12,13 +10,37 @@ body {
   padding: 0;
   background-color: $grey;
 }
+.container {
+  width:60%;
+  margin: auto;
+}
+
+
+
+.button {
+  color: white;
+  
+  background-color: $blood;
+  border:none;
+  border-radius:50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding:15px 40px;
+  cursor: pointer;
+}
 
 header {
   width: 100%;
-  padding: 10px 0;
+  padding: 20px 0;
   background: rgba(0, 0, 0, 0.897);
   position: fixed;
   z-index: 1;
+  .container {
+    display:flex;
+    justify-content: space-between;;
+    z-index: 1;
+    width:70%;
+
   .title {
     font-family: "Courgette", Courier, monospace;
     margin: 0;
@@ -44,9 +66,10 @@ header {
           a {
             color: rgb(255, 255, 255);
             text-decoration: none;
+            transition: .3s;
 
             &:hover {
-              
+              color:$darkgrey;
             }
           }
         }
@@ -54,10 +77,15 @@ header {
     }
   }
 }
+}
 
-.welcome {
+
+
+.welcome-section {
   width: 100%;
   height: 100vh;
+
+  
   .background {
     width: 100%;
     height: 100vh;
@@ -67,6 +95,7 @@ header {
     background: url(../images/background.jpg);
     background-size: cover;
     background-position: center center;
+    z-index:-1;
     filter: brightness(80%);
   }
   .hero-wrap {
@@ -77,7 +106,6 @@ header {
     .hero {
       width: 600px;
       height: 400px;
-    
       box-sizing: border-box;
       padding: 50px;
       text-align: center;
@@ -98,6 +126,7 @@ header {
         color: white;
         text-transform: capitalize;
         font-size:60px;
+        margin:0;
         span {
           color: $blood;
         }
@@ -106,47 +135,39 @@ header {
         color: white;
         margin:40px;
         background-color: $blood;
-       border:none;
-        border-radius:50px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        padding:10px 40px;
       }
     }
   }
 }
 
 .dessert-section {
-
-
- 
   .top {
     width: 100%;
     min-height: 40vh;
     background: $blood;
-  
-
-  .top-wrap {
+  .container {
     position: relative;
-    width:80%;
-    margin:auto;
     .dessert-text {
-        width: 50%;
+        width: 45%;
         min-height:40vh;
-        padding:100px;
-         box-sizing: border-box;
-         font-family: 'Raleway', sans-serif;
+        padding:100px 0;
+        box-sizing: border-box;
         color:rgb(212, 149, 149);
-       font-size:18px;
+        font-size:18px;
         
+    }
+
+    .button {
+      color: rgb(212, 149, 149);
+      margin:40px 0;
+      border: solid 2px rgb(212, 149, 149);
     }
     .dessert-img {
         width: 450px;
         height: 400px;
         position: absolute;
         margin: auto;
-        right: 100px;
-        
+        right: 0;
         bottom: -120px;
         img {
           width: 100%;
@@ -155,6 +176,82 @@ header {
     }
   }
 
+    
+}
+
  
   
+
+
+.recipe-section {
+  width:100%;
+  margin-top: 150px;
+
+  .desserts, .main-course, .breakfast {
+    .text-wrap {
+      text-align:center;
+
+      h2, p {
+        margin:0;
+      }
+      h2 {
+        margin: 50px 0 5px 0;
+      }
+    }
+    .button {
+      display:block;
+      background:none;
+      color:$blood;
+      border:solid 2px $blood;
+      margin:30px auto;
+      padding:15px 25px;
+    }
+    .card-wrap {
+      width:100%;
+      display:flex;
+      margin:70px auto;
+      justify-content: space-between;
+      flex-wrap:wrap;
+      .card {
+        width:250px;
+        text-align:center;
+        text-transform: capitalize;
+
+        $dessertImages: (
+          one: url(../images/desserts/cheesecake-full.jpg), 
+          two: url(../images/desserts/doughnut.jpg),
+          three: url(../images/desserts/flaps.jpg),
+          four: url(../images/desserts/cup-cakes.jpg)
+        );
+        
+
+        @each $name, $image in $dessertImages {
+          .img-#{$name} {
+            border-radius:10px;
+            box-shadow: 0 10px 24px 0 rgba(0,0,0,.27);
+            width:250px;
+            height:250px;
+            background: $image;
+            background-size: cover;
+            background-position: center center;
+            cursor: pointer;
+            transition: .3s;
+
+            &:hover {
+              transform:scale(1.1);
+              box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+              filter: grayscale(100%)
+            }
+          }
+        }
+
+      
+      }
+    }
+  }
+}
+
+.search-section {
+  min-height: 100vh;
+  background:white;
 }

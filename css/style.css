@@ -1,28 +1,55 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #ebedf1;
+  background-color: #e2e2e2;
+}
+
+.container {
+  width: 60%;
+  margin: auto;
+}
+
+.button {
+  color: white;
+  background-color: #803841;
+  border: none;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 15px 40px;
+  cursor: pointer;
 }
 
 header {
   width: 100%;
-  padding: 10px 0;
+  padding: 20px 0;
   background: rgba(0, 0, 0, 0.897);
   position: fixed;
   z-index: 1;
 }
 
-header .title {
+header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  z-index: 1;
+  width: 70%;
+}
+
+header .container .title {
   font-family: "Courgette", Courier, monospace;
   margin: 0;
   color: white;
 }
 
-header .title span {
+header .container .title span {
   color: #803841;
 }
 
-header .nav-wrap {
+header .container .nav-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,30 +61,36 @@ header .nav-wrap {
           justify-content: flex-end;
 }
 
-header .nav-wrap nav ul {
+header .container .nav-wrap nav ul {
   margin: 0;
 }
 
-header .nav-wrap nav ul li {
+header .container .nav-wrap nav ul li {
   display: inline-block;
   text-transform: capitalize;
 }
 
-header .nav-wrap nav ul li:nth-child(2) {
+header .container .nav-wrap nav ul li:nth-child(2) {
   padding: 0 70px;
 }
 
-header .nav-wrap nav ul li a {
+header .container .nav-wrap nav ul li a {
   color: white;
   text-decoration: none;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
-.welcome {
+header .container .nav-wrap nav ul li a:hover {
+  color: #747474;
+}
+
+.welcome-section {
   width: 100%;
   height: 100vh;
 }
 
-.welcome .background {
+.welcome-section .background {
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -66,11 +99,12 @@ header .nav-wrap nav ul li a {
   background: url(../images/background.jpg);
   background-size: cover;
   background-position: center center;
+  z-index: -1;
   -webkit-filter: brightness(80%);
           filter: brightness(80%);
 }
 
-.welcome .hero-wrap {
+.welcome-section .hero-wrap {
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -83,7 +117,7 @@ header .nav-wrap nav ul li a {
           align-items: center;
 }
 
-.welcome .hero-wrap .hero {
+.welcome-section .hero-wrap .hero {
   width: 600px;
   height: 400px;
   -webkit-box-sizing: border-box;
@@ -107,31 +141,27 @@ header .nav-wrap nav ul li a {
           align-items: center;
 }
 
-.welcome .hero-wrap .hero p {
+.welcome-section .hero-wrap .hero p {
   color: gray;
   text-transform: uppercase;
   font-size: 13px;
 }
 
-.welcome .hero-wrap .hero h1 {
+.welcome-section .hero-wrap .hero h1 {
   color: white;
   text-transform: capitalize;
   font-size: 60px;
+  margin: 0;
 }
 
-.welcome .hero-wrap .hero h1 span {
+.welcome-section .hero-wrap .hero h1 span {
   color: #803841;
 }
 
-.welcome .hero-wrap .hero .button {
+.welcome-section .hero-wrap .hero .button {
   color: white;
   margin: 40px;
   background-color: #803841;
-  border: none;
-  border-radius: 50px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 10px 40px;
 }
 
 .dessert-section .top {
@@ -140,33 +170,178 @@ header .nav-wrap nav ul li a {
   background: #803841;
 }
 
-.dessert-section .top .top-wrap {
+.dessert-section .top .container {
   position: relative;
-  width: 80%;
-  margin: auto;
 }
 
-.dessert-section .top .top-wrap .dessert-text {
-  width: 50%;
+.dessert-section .top .container .dessert-text {
+  width: 45%;
   min-height: 40vh;
-  padding: 100px;
+  padding: 100px 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
   color: #d49595;
   font-size: 18px;
 }
 
-.dessert-section .top .top-wrap .dessert-img {
+.dessert-section .top .container .button {
+  color: #d49595;
+  margin: 40px 0;
+  border: solid 2px #d49595;
+}
+
+.dessert-section .top .container .dessert-img {
   width: 450px;
   height: 400px;
   position: absolute;
   margin: auto;
-  right: 100px;
+  right: 0;
   bottom: -120px;
 }
 
-.dessert-section .top .top-wrap .dessert-img img {
+.dessert-section .top .container .dessert-img img {
   width: 100%;
+}
+
+.recipe-section {
+  width: 100%;
+  margin-top: 150px;
+}
+
+.recipe-section .desserts .text-wrap, .recipe-section .main-course .text-wrap, .recipe-section .breakfast .text-wrap {
+  text-align: center;
+}
+
+.recipe-section .desserts .text-wrap h2, .recipe-section .desserts .text-wrap p, .recipe-section .main-course .text-wrap h2, .recipe-section .main-course .text-wrap p, .recipe-section .breakfast .text-wrap h2, .recipe-section .breakfast .text-wrap p {
+  margin: 0;
+}
+
+.recipe-section .desserts .text-wrap h2, .recipe-section .main-course .text-wrap h2, .recipe-section .breakfast .text-wrap h2 {
+  margin: 50px 0 5px 0;
+}
+
+.recipe-section .desserts .button, .recipe-section .main-course .button, .recipe-section .breakfast .button {
+  display: block;
+  background: none;
+  color: #803841;
+  border: solid 2px #803841;
+  margin: 30px auto;
+  padding: 15px 25px;
+}
+
+.recipe-section .desserts .card-wrap, .recipe-section .main-course .card-wrap, .recipe-section .breakfast .card-wrap {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 70px auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.recipe-section .desserts .card-wrap .card, .recipe-section .main-course .card-wrap .card, .recipe-section .breakfast .card-wrap .card {
+  width: 250px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.recipe-section .desserts .card-wrap .card .img-one, .recipe-section .main-course .card-wrap .card .img-one, .recipe-section .breakfast .card-wrap .card .img-one {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+  width: 250px;
+  height: 250px;
+  background: url(../images/desserts/cheesecake-full.jpg);
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.recipe-section .desserts .card-wrap .card .img-one:hover, .recipe-section .main-course .card-wrap .card .img-one:hover, .recipe-section .breakfast .card-wrap .card .img-one:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.recipe-section .desserts .card-wrap .card .img-two, .recipe-section .main-course .card-wrap .card .img-two, .recipe-section .breakfast .card-wrap .card .img-two {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+  width: 250px;
+  height: 250px;
+  background: url(../images/desserts/doughnut.jpg);
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.recipe-section .desserts .card-wrap .card .img-two:hover, .recipe-section .main-course .card-wrap .card .img-two:hover, .recipe-section .breakfast .card-wrap .card .img-two:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.recipe-section .desserts .card-wrap .card .img-three, .recipe-section .main-course .card-wrap .card .img-three, .recipe-section .breakfast .card-wrap .card .img-three {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+  width: 250px;
+  height: 250px;
+  background: url(../images/desserts/flaps.jpg);
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.recipe-section .desserts .card-wrap .card .img-three:hover, .recipe-section .main-course .card-wrap .card .img-three:hover, .recipe-section .breakfast .card-wrap .card .img-three:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.recipe-section .desserts .card-wrap .card .img-four, .recipe-section .main-course .card-wrap .card .img-four, .recipe-section .breakfast .card-wrap .card .img-four {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+  width: 250px;
+  height: 250px;
+  background: url(../images/desserts/cup-cakes.jpg);
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.recipe-section .desserts .card-wrap .card .img-four:hover, .recipe-section .main-course .card-wrap .card .img-four:hover, .recipe-section .breakfast .card-wrap .card .img-four:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.search-section {
+  min-height: 100vh;
+  background: white;
 }
 /*# sourceMappingURL=style.css.map */

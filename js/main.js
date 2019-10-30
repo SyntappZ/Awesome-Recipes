@@ -1,5 +1,5 @@
 import { getData } from "./recipeData.js";
-
+force.bindHashes();
 const btn = document.querySelector(".button");
 
 const cuisineType = [
