@@ -27,6 +27,10 @@ body {
   letter-spacing: 1px;
   padding:15px 40px;
   cursor: pointer;
+
+  &:focus {
+    outline:none;
+  }
 }
 
 header {
@@ -188,6 +192,7 @@ header {
   margin-top: 150px;
 
   .desserts, .main-course, .breakfast {
+    
     .text-wrap {
       text-align:center;
 
@@ -209,23 +214,33 @@ header {
     .card-wrap {
       width:100%;
       display:flex;
-      margin:70px auto;
+      margin:70px auto 150px auto;
       justify-content: space-between;
       flex-wrap:wrap;
+      
       .card {
         width:250px;
         text-align:center;
         text-transform: capitalize;
 
-        $dessertImages: (
+        $images: (
           one: url(../images/desserts/cheesecake-full.jpg), 
           two: url(../images/desserts/doughnut.jpg),
           three: url(../images/desserts/flaps.jpg),
-          four: url(../images/desserts/cup-cakes.jpg)
+          four: url(../images/desserts/cup-cakes.jpg),
+          five: url(../images/main-course/fish.jpg), 
+          six: url(../images/main-course/pork.jpg),
+          seven: url(../images/main-course/beef.jpg),
+          eight: url(../images/main-course/chicken.jpg),
+          nine: url(../images/breakfast/omelette.jpg), 
+          ten: url(../images/breakfast/waffles.jpg), 
+          eleven: url(../images/breakfast/pancakes.jpg), 
+          twelve: url(../images/breakfast/smoothies.jpg), 
         );
+       
         
 
-        @each $name, $image in $dessertImages {
+        @each $name, $image in $images {
           .img-#{$name} {
             border-radius:10px;
             box-shadow: 0 10px 24px 0 rgba(0,0,0,.27);
@@ -240,7 +255,7 @@ header {
             &:hover {
               transform:scale(1.1);
               box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-              filter: grayscale(100%)
+              filter: grayscale(100%);
             }
           }
         }
@@ -254,4 +269,30 @@ header {
 .search-section {
   min-height: 100vh;
   background:white;
+}
+
+
+
+
+@for $i from 1 through 400 {
+  @media (max-width: 1800px - $i + 0px) {
+
+    .recipe-section {
+      .desserts, .main-course, .breakfast {
+        .card-wrap {
+          .card {
+            width:250px - ($i / 7) + 0px;
+            
+            .card-img {
+              width:250px - ($i / 7) + 0px;
+              height:250px - ($i / 7) + 0px;
+            }
+          }
+        }
+      }
+    }
+    
+   
+    
+  }
 }

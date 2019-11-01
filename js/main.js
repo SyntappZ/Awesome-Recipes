@@ -1,6 +1,7 @@
-import { getData } from "./recipeData.js";
+// import { getData } from "./recipeData.js";
 force.bindHashes();
-const btn = document.querySelector(".button");
+
+ 
 
 const cuisineType = [
   "American",
@@ -23,13 +24,13 @@ const cuisineType = [
   "South East Asian"
 ];
 
-btn.addEventListener("click", () => {
-  const recipes = getData("fish", cuisineType[2]);
-  recipes
-    .then(data => {
-      console.log(data);
-    })
-    .catch(err => {
-      console.log(err);
-    });
-});
+// btn.addEventListener("click", () => {
+//   const recipes = getData("fish", cuisineType[2]);
+//   recipes
+//     .then(data => {
+//       console.log(data);
+//     })
+//     .catch(err => {
+//       console.log(err);
+//     });
+// });
