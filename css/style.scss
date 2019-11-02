@@ -271,28 +271,52 @@ header {
   background:white;
 }
 
+$breakpoints: (
+  220px: 1800px,
+  170px: 1360px,
+  150px: 1024px,
+);
 
+@each $cardSize, $MediaSize in $breakpoints {
+  @media (max-width: $MediaSize) {
 
-
-@for $i from 1 through 400 {
-  @media (max-width: 1800px - $i + 0px) {
-
-    .recipe-section {
-      .desserts, .main-course, .breakfast {
-        .card-wrap {
-          .card {
-            width:250px - ($i / 7) + 0px;
-            
-            .card-img {
-              width:250px - ($i / 7) + 0px;
-              height:250px - ($i / 7) + 0px;
+        .recipe-section {
+          .desserts, .main-course, .breakfast {
+            .card-wrap {
+              .card {
+                width: $cardSize + 0px;
+               
+                .card-img {
+                  width: $cardSize + 0px;
+                  height: $cardSize + 0px;
+                }
+              }
             }
           }
         }
       }
-    }
+}
+
+
+// @for $i from 1 through 400 {
+//   @media (max-width: 1800px - $i + 0px) {
+
+//     .recipe-section {
+//       .desserts, .main-course, .breakfast {
+//         .card-wrap {
+//           .card {
+//             width:250px - ($i / 7) + 0px;
+            
+//             .card-img {
+//               width:250px - ($i / 7) + 0px;
+//               height:250px - ($i / 7) + 0px;
+//             }
+//           }
+//         }
+//       }
+//     }
     
    
     
-  }
-}
+//   }
+// }
