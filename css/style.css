@@ -699,7 +699,7 @@ header .container .nav-wrap nav ul li a:hover {
 }
 
 .search-section .search-wrap .cover .options-bar {
-  height: 80px;
+  height: 90px;
   width: 100%;
   background: #aaaaaa;
   position: absolute;
@@ -713,7 +713,7 @@ header .container .nav-wrap nav ul li a:hover {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  height: 80px;
+  height: 100%;
 }
 
 .search-section .search-wrap .cover .options-bar .container .option-wrap {
@@ -725,6 +725,7 @@ header .container .nav-wrap nav ul li a:hover {
 .search-section .search-wrap .cover .options-bar .container .option-wrap p {
   text-transform: uppercase;
   font-size: 13px;
+  padding: 10px 0;
 }
 
 .search-section .search-wrap .cover .options-bar .container .option-wrap .select-options {
@@ -733,7 +734,7 @@ header .container .nav-wrap nav ul li a:hover {
   height: 30px;
   border: none;
   border-bottom: none;
-  background: #581e1e;
+  background: #803841;
   cursor: pointer;
   color: white;
 }
