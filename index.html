@@ -9,17 +9,19 @@
 
 
     <link href="https://fonts.googleapis.com/css?family=Courgette&Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <!-- <script src="https://developer.edamam.com/attribution/badge.js"></script> -->
     <link rel="stylesheet" href="css/style.css">
     </link>
-    <title>gluten free</title>
+    <title>Awsome recipes</title>
 </head>
 
 <body>
     <header>
         <div class="container">
 
-            <h2 class="title">Awesome <span>Foods</span> </h2>
+            <h2 class="title">Awesome <span>Recipes</span> </h2>
 
             <div class="nav-wrap">
                 <nav>
@@ -38,7 +40,7 @@
 
             <div class="hero-wrap">
                 <div class="hero">
-                    <p>welcome to awesome foods</p>
+                    <p>welcome to awesome recipes</p>
                     <div class="text">
                         <h1>an
                             <span>awesome</span>
@@ -59,7 +61,7 @@
                     <p>Thousands of dessert recipes to choose from, biscuits, cakes, puddings and awesomeness.</p>
                     <button class="button">desserts</button>
                 </div>
-                
+
                 <div class="dessert-img">
                     <img src="./images/cheese-cake.png" alt="dessert image">
                 </div>
@@ -67,10 +69,10 @@
             <div id="recipes"></div>
         </div>
     </section>
-   
+
 
     <section class="recipe-section">
-            
+
 
         <div class="desserts">
             <div class="container">
@@ -130,36 +132,97 @@
         </div>
 
         <div class="breakfast">
-                <div class="container">
-                    <div class="text-wrap">
-                        <h2>Breakfast Recipes.</h2>
-                        <p>Search thousands of awesome breakfasts.</p>
+            <div class="container">
+                <div class="text-wrap">
+                    <h2>Breakfast Recipes.</h2>
+                    <p>Search thousands of awesome breakfasts.</p>
+                </div>
+                <button class="button">Search Breakfasts</button>
+                <div class="card-wrap">
+                    <div class="card">
+                        <div class="img-nine card-img"></div>
+                        <p>omlette</p>
                     </div>
-                    <button class="button">Search Breakfasts</button>
-                    <div class="card-wrap">
-                        <div class="card">
-                            <div class="img-nine card-img"></div>
-                            <p>omlette</p>
+                    <div class="card">
+                        <div class="img-ten card-img"></div>
+                        <p>waffles</p>
+                    </div>
+                    <div class="card">
+                        <div class="img-eleven card-img"></div>
+                        <p>pancakes</p>
+                    </div>
+                    <div class="card">
+                        <div class="img-twelve card-img"></div>
+                        <p>smoothies</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div id="search"></div>
+    </section>
+
+    <section class="search-section">
+        <div class="search-wrap">
+            <div class="cover">
+                <div class="container">
+                    <div class="text">
+                        <p>awesome recipes at your finger tips!</p>
+
+                        <h1><span>Search</span> for recipes</h1>
+                    </div>
+
+                    <div class="searchbar">
+                        <div class="search">
+                            <input type="text" class="searchTerm" placeholder="What would you like to eat?">
+                            <button type="submit" class="searchButton">
+                                <i class="fa fa-search"></i>
+                            </button>
                         </div>
-                        <div class="card">
-                            <div class="img-ten card-img"></div>
-                            <p>waffles</p>
+                    </div>
+
+                </div>
+
+                <div class="options-bar">
+                    <div class="container">
+
+                        <div class="option-wrap">
+                            <p>Cuisine Type</p>
+                            <select class="select-options" id="CuisineType">
+                                <option value="none">none</option>
+                                <option value="2">two</option>
+                                <option value="3">three</option>
+                                <option value="4">four</option>
+                            </select>
                         </div>
-                        <div class="card">
-                            <div class="img-eleven card-img"></div>
-                            <p>pancakes</p>
+                        <div class="option-wrap">
+                            <p>Meal Type</p>
+                            <select class="select-options" id="mealType">
+                                <option value="none">none</option>
+                                <option value="2">two</option>
+                                <option value="3">three</option>
+                                <option value="4">four</option>
+                            </select>
                         </div>
-                        <div class="card">
-                            <div class="img-twelve card-img"></div>
-                            <p>smoothies</p>
+                        <div class="option-wrap">
+                            <p>Health</p>
+                            <select class="select-options" id="health">
+                                <option value="none">none</option>
+                                <option value="2">two</option>
+                                <option value="3">three</option>
+                                <option value="4">four</option>
+                            </select>
                         </div>
                     </div>
                 </div>
+
             </div>
-    </section>
 
-    <section id="search" class="search-section">
 
+
+
+        </div>
     </section>
 
 

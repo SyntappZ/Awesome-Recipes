@@ -1,9 +1,9 @@
-
 $grey: #e2e2e2;
-$darkgrey: #747474;
+$darkgrey: rgb(128, 128, 128);
 $black: #333;
 $red: #cf2727;
 $blood: #803841;
+$lightred: #d49595;
 
 body {
   margin: 0;
@@ -11,69 +11,70 @@ body {
   background-color: $grey;
 }
 .container {
-  width:60%;
+  width: 60%;
   margin: auto;
 }
 
-
-
 .button {
   color: white;
-  
   background-color: $blood;
-  border:none;
-  border-radius:50px;
+  border: none;
+  border-radius: 50px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding:15px 40px;
+  padding: 15px 40px;
+  transition: 0.3s;
   cursor: pointer;
 
   &:focus {
-    outline:none;
+    outline: none;
   }
 }
 
 header {
   width: 100%;
   padding: 20px 0;
-  background: rgba(0, 0, 0, 0.897);
+  background: rgb(0, 0, 0);
   position: fixed;
   z-index: 1;
   .container {
-    display:flex;
-    justify-content: space-between;;
-    z-index: 1;
-    width:70%;
-
-  .title {
-    font-family: "Courgette", Courier, monospace;
-    margin: 0;
-    color:white;
-    span {
-      color: $blood;
-    }
-  }
-  .nav-wrap {
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    nav {
-      ul {
-        margin: 0;
-        li {
-          display: inline-block;
-          text-transform: capitalize;
-          &:nth-child(2) {
-            padding: 0 70px;
-          }
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 1;
+    width: 70%;
 
-          a {
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-            transition: .3s;
+    .title {
+      font-family: "Courgette", Courier, monospace;
+      margin: 0;
+      color: white;
+      span {
+        color: $blood;
+      }
+    }
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
 
-            &:hover {
-              color:$darkgrey;
+      nav {
+        ul {
+          margin: 0;
+          li {
+            display: inline-block;
+            text-transform: capitalize;
+            &:nth-child(2) {
+              padding: 0 70px;
+            }
+
+            a {
+              color: rgb(255, 255, 255);
+              text-decoration: none;
+              transition: 0.3s;
+
+              &:hover {
+                color: $grey;
+              }
             }
           }
         }
@@ -81,15 +82,11 @@ header {
     }
   }
 }
-}
-
-
 
 .welcome-section {
   width: 100%;
   height: 100vh;
 
-  
   .background {
     width: 100%;
     height: 100vh;
@@ -99,7 +96,7 @@ header {
     background: url(../images/background.jpg);
     background-size: cover;
     background-position: center center;
-    z-index:-1;
+    z-index: -1;
     filter: brightness(80%);
   }
   .hero-wrap {
@@ -120,25 +117,30 @@ header {
       justify-content: space-around;
       flex-direction: column;
       align-items: center;
-    
+
       p {
-        color: rgb(128, 128, 128);
+        color: $darkgrey;
         text-transform: uppercase;
         font-size: 13px;
       }
       h1 {
         color: white;
         text-transform: capitalize;
-        font-size:60px;
-        margin:0;
+        font-size: 60px;
+        margin: 0;
         span {
           color: $blood;
         }
       }
       .button {
         color: white;
-        margin:40px;
+        margin: 40px;
         background-color: $blood;
+
+        &:hover {
+          background: white;
+          color: $blood;
+        }
       }
     }
   }
@@ -149,24 +151,23 @@ header {
     width: 100%;
     min-height: 40vh;
     background: $blood;
-  .container {
-    position: relative;
-    .dessert-text {
+    .container {
+      position: relative;
+      .dessert-text {
         width: 45%;
-        min-height:40vh;
-        padding:100px 0;
+        min-height: 40vh;
+        padding: 100px 0;
         box-sizing: border-box;
-        color:rgb(212, 149, 149);
-        font-size:18px;
-        
-    }
+        color: $lightred;
+        font-size: 18px;
+      }
 
-    .button {
-      color: rgb(212, 149, 149);
-      margin:40px 0;
-      border: solid 2px rgb(212, 149, 149);
-    }
-    .dessert-img {
+      .button {
+        color: $lightred;
+        margin: 40px 0;
+        border: solid 2px $lightred;
+      }
+      .dessert-img {
         width: 450px;
         height: 400px;
         position: absolute;
@@ -179,88 +180,88 @@ header {
       }
     }
   }
-
-    
 }
 
- 
-  
-
-
 .recipe-section {
-  width:100%;
+  width: 100%;
   margin-top: 150px;
 
-  .desserts, .main-course, .breakfast {
-    
+  #search {
+    padding-bottom: 69px;
+  }
+  .desserts,
+  .main-course,
+  .breakfast {
     .text-wrap {
-      text-align:center;
+      text-align: center;
 
-      h2, p {
-        margin:0;
+      h2,
+      p {
+        margin: 0;
       }
       h2 {
         margin: 50px 0 5px 0;
       }
     }
     .button {
-      display:block;
-      background:none;
-      color:$blood;
-      border:solid 2px $blood;
-      margin:30px auto;
-      padding:15px 25px;
+      display: block;
+      background: none;
+      color: $blood;
+      border: solid 2px $blood;
+      margin: 30px auto;
+      padding: 15px 25px;
+
+      &:hover {
+        background: $blood;
+        color: white;
+      }
     }
     .card-wrap {
-      width:100%;
-      display:flex;
-      margin:70px auto 150px auto;
+      width: 100%;
+      display: flex;
+      margin: 70px auto 150px auto;
       justify-content: space-between;
-      flex-wrap:wrap;
-      
-      .card {
-        width:250px;
-        text-align:center;
-        text-transform: capitalize;
+      flex-wrap: wrap;
 
+      .card {
+        width: 250px;
+        text-align: center;
+        text-transform: capitalize;
+        margin: auto;
         $images: (
-          one: url(../images/desserts/cheesecake-full.jpg), 
+          one: url(../images/desserts/cheesecake-full.jpg),
           two: url(../images/desserts/doughnut.jpg),
           three: url(../images/desserts/flaps.jpg),
           four: url(../images/desserts/cup-cakes.jpg),
-          five: url(../images/main-course/fish.jpg), 
+          five: url(../images/main-course/fish.jpg),
           six: url(../images/main-course/pork.jpg),
           seven: url(../images/main-course/beef.jpg),
           eight: url(../images/main-course/chicken.jpg),
-          nine: url(../images/breakfast/omelette.jpg), 
-          ten: url(../images/breakfast/waffles.jpg), 
-          eleven: url(../images/breakfast/pancakes.jpg), 
-          twelve: url(../images/breakfast/smoothies.jpg), 
+          nine: url(../images/breakfast/omelette.jpg),
+          ten: url(../images/breakfast/waffles.jpg),
+          eleven: url(../images/breakfast/pancakes.jpg),
+          twelve: url(../images/breakfast/smoothies.jpg)
         );
-       
-        
 
         @each $name, $image in $images {
           .img-#{$name} {
-            border-radius:10px;
-            box-shadow: 0 10px 24px 0 rgba(0,0,0,.27);
-            width:250px;
-            height:250px;
+            border-radius: 10px;
+            box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+            width: 250px;
+            height: 250px;
             background: $image;
             background-size: cover;
             background-position: center center;
             cursor: pointer;
-            transition: .3s;
+            transition: 0.3s;
 
             &:hover {
-              transform:scale(1.1);
+              transform: scale(1.1);
               box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
               filter: grayscale(100%);
             }
           }
         }
-
-      
       }
     }
   }
@@ -268,55 +269,252 @@ header {
 
 .search-section {
   min-height: 100vh;
-  background:white;
-}
+  background: white;
 
-$breakpoints: (
-  220px: 1800px,
-  170px: 1360px,
-  150px: 1024px,
-);
+  .search-wrap {
+    min-height: 500px;
+    background: url(../images/search-background.jpg);
+    background-size: cover;
+    background-position: center center;
 
-@each $cardSize, $MediaSize in $breakpoints {
-  @media (max-width: $MediaSize) {
+    .cover {
+      min-height: 500px;
+      background: rgba(0, 0, 0, 0.76);
+      position: relative;
+      .container {
+        .text {
+          margin: auto;
+          padding: 50px 0 0 0;
+          color: white;
+          letter-spacing: 2px;
+          text-align: center;
+          p {
+            color: $darkgrey;
+            text-transform: uppercase;
+            font-size: 13px;
+            margin: 0 0 50px 0;
+          }
+          h1 {
+            text-transform: capitalize;
+            font-size: 50px;
+            span {
+              color: $blood;
+            }
+          }
+        }
+        .searchbar {
+          width: 50%;
+          margin: auto;
+          .search {
+            width: 100%;
+            position: relative;
+            display: flex;
 
-        .recipe-section {
-          .desserts, .main-course, .breakfast {
-            .card-wrap {
-              .card {
-                width: $cardSize + 0px;
-               
-                .card-img {
-                  width: $cardSize + 0px;
-                  height: $cardSize + 0px;
-                }
+            .searchTerm {
+              width: 100%;
+              border: 3px solid $blood;
+              border-right: none;
+              padding: 5px;
+              height: 20px;
+              border-radius: 5px 0 0 5px;
+              outline: none;
+              color: #9dbfaf;
+              &:focus {
+                color: $blood;
+              }
+            }
+
+            .searchButton {
+              width: 40px;
+              height: 36px;
+              border: 1px solid $blood;
+              background: $blood;
+              text-align: center;
+              color: #fff;
+              border-radius: 0 5px 5px 0;
+              cursor: pointer;
+              font-size: 20px;
+
+              &:focus {
+                outline: none;
               }
             }
           }
         }
       }
+
+      .options-bar {
+        height: 80px;
+        width: 100%;
+        background: rgb(170, 170, 170);
+        position: absolute;
+        bottom: 0;
+
+        .container {
+          display: flex;
+          align-items: flex-end;
+          height: 80px;
+          .option-wrap {
+            width: 33%;
+            margin: 0 auto;
+            text-align: center;
+
+            p {
+              text-transform: uppercase;
+              font-size: 13px;
+            }
+
+            .select-options {
+              bottom: 0;
+              width: 100%;
+              height: 30px;
+              border: none;
+              border-bottom: none;
+              background: rgb(88, 30, 30);
+
+              cursor: pointer;
+              color: white;
+
+              &:focus {
+                outline: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
+$breakpoints: (
+  220px: 1800px,
+  170px: 1500px
+);
 
-// @for $i from 1 through 400 {
-//   @media (max-width: 1800px - $i + 0px) {
+@each $cardSize, $MediaSize in $breakpoints {
+  @media (max-width: $MediaSize) {
+    .recipe-section {
+      .desserts,
+      .main-course,
+      .breakfast {
+        .card-wrap {
+          .card {
+            width: $cardSize + 0px;
 
-//     .recipe-section {
-//       .desserts, .main-course, .breakfast {
-//         .card-wrap {
-//           .card {
-//             width:250px - ($i / 7) + 0px;
-            
-//             .card-img {
-//               width:250px - ($i / 7) + 0px;
-//               height:250px - ($i / 7) + 0px;
-//             }
-//           }
-//         }
-//       }
-//     }
-    
-   
-    
-//   }
-// }
+            .card-img {
+              width: $cardSize + 0px;
+              height: $cardSize + 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .dessert-section {
+    .top {
+      .container {
+        position: relative;
+        width: 80%;
+        .dessert-text {
+          width: 55%;
+          padding: 50px 0;
+        }
+        .dessert-img {
+          right: 0;
+        }
+      }
+    }
+  }
+  .recipe-section {
+    .desserts,
+    .main-course,
+    .breakfast {
+      .card-wrap {
+        margin-bottom: 70px;
+        width: 100%;
+        .card {
+          margin-bottom: 50px;
+          width: 220px;
+          .card-img {
+            width: 220px;
+            height: 220px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+
+  header {
+    width: 100%;
+    padding: 20px 0 0 0;
+
+    .container {
+      width: 100%;
+      text-align: center;
+      .title {
+        margin: auto;
+      }
+      .nav-wrap {
+        display: block;
+        width: 100%;
+        nav {
+          width: 100%;
+          margin: auto;
+          ul {
+            padding: 15px 0 10px 0;
+
+            li {
+              padding: 10px 20px;
+              &:nth-child(2) {
+                padding: 10px 20px;
+                border-left: solid 1px #eee;
+                border-right: solid 1px #eee;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .welcome-section {
+    .hero-wrap {
+      .hero {
+        p {
+          font-size: 12px;
+        }
+        h1 {
+          font-size: 26px;
+        }
+      }
+    }
+  }
+
+  .dessert-section {
+    .top {
+      .container {
+        .dessert-text {
+          width: 100%;
+          padding: 50px 20px;
+          text-align: center;
+        }
+        .dessert-img {
+          display: none;
+        }
+      }
+    }
+  }
+  .recipe-section {
+    #search {
+      padding-bottom: 115px;
+    }
+  }
+}

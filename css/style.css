@@ -17,6 +17,8 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 15px 40px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   cursor: pointer;
 }
 
@@ -27,7 +29,7 @@ body {
 header {
   width: 100%;
   padding: 20px 0;
-  background: rgba(0, 0, 0, 0.897);
+  background: black;
   position: fixed;
   z-index: 1;
 }
@@ -39,6 +41,8 @@ header .container {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   z-index: 1;
   width: 70%;
 }
@@ -81,12 +85,12 @@ header .container .nav-wrap nav ul li:nth-child(2) {
 header .container .nav-wrap nav ul li a {
   color: white;
   text-decoration: none;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 header .container .nav-wrap nav ul li a:hover {
-  color: #747474;
+  color: #e2e2e2;
 }
 
 .welcome-section {
@@ -168,6 +172,11 @@ header .container .nav-wrap nav ul li a:hover {
   background-color: #803841;
 }
 
+.welcome-section .hero-wrap .hero .button:hover {
+  background: white;
+  color: #803841;
+}
+
 .dessert-section .top {
   width: 100%;
   min-height: 40vh;
@@ -212,19 +221,34 @@ header .container .nav-wrap nav ul li a:hover {
   margin-top: 150px;
 }
 
-.recipe-section .desserts .text-wrap, .recipe-section .main-course .text-wrap, .recipe-section .breakfast .text-wrap {
+.recipe-section #search {
+  padding-bottom: 69px;
+}
+
+.recipe-section .desserts .text-wrap,
+.recipe-section .main-course .text-wrap,
+.recipe-section .breakfast .text-wrap {
   text-align: center;
 }
 
-.recipe-section .desserts .text-wrap h2, .recipe-section .desserts .text-wrap p, .recipe-section .main-course .text-wrap h2, .recipe-section .main-course .text-wrap p, .recipe-section .breakfast .text-wrap h2, .recipe-section .breakfast .text-wrap p {
+.recipe-section .desserts .text-wrap h2,
+.recipe-section .desserts .text-wrap p,
+.recipe-section .main-course .text-wrap h2,
+.recipe-section .main-course .text-wrap p,
+.recipe-section .breakfast .text-wrap h2,
+.recipe-section .breakfast .text-wrap p {
   margin: 0;
 }
 
-.recipe-section .desserts .text-wrap h2, .recipe-section .main-course .text-wrap h2, .recipe-section .breakfast .text-wrap h2 {
+.recipe-section .desserts .text-wrap h2,
+.recipe-section .main-course .text-wrap h2,
+.recipe-section .breakfast .text-wrap h2 {
   margin: 50px 0 5px 0;
 }
 
-.recipe-section .desserts .button, .recipe-section .main-course .button, .recipe-section .breakfast .button {
+.recipe-section .desserts .button,
+.recipe-section .main-course .button,
+.recipe-section .breakfast .button {
   display: block;
   background: none;
   color: #803841;
@@ -233,7 +257,16 @@ header .container .nav-wrap nav ul li a:hover {
   padding: 15px 25px;
 }
 
-.recipe-section .desserts .card-wrap, .recipe-section .main-course .card-wrap, .recipe-section .breakfast .card-wrap {
+.recipe-section .desserts .button:hover,
+.recipe-section .main-course .button:hover,
+.recipe-section .breakfast .button:hover {
+  background: #803841;
+  color: white;
+}
+
+.recipe-section .desserts .card-wrap,
+.recipe-section .main-course .card-wrap,
+.recipe-section .breakfast .card-wrap {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -246,13 +279,18 @@ header .container .nav-wrap nav ul li a:hover {
       flex-wrap: wrap;
 }
 
-.recipe-section .desserts .card-wrap .card, .recipe-section .main-course .card-wrap .card, .recipe-section .breakfast .card-wrap .card {
+.recipe-section .desserts .card-wrap .card,
+.recipe-section .main-course .card-wrap .card,
+.recipe-section .breakfast .card-wrap .card {
   width: 250px;
   text-align: center;
   text-transform: capitalize;
+  margin: auto;
 }
 
-.recipe-section .desserts .card-wrap .card .img-one, .recipe-section .main-course .card-wrap .card .img-one, .recipe-section .breakfast .card-wrap .card .img-one {
+.recipe-section .desserts .card-wrap .card .img-one,
+.recipe-section .main-course .card-wrap .card .img-one,
+.recipe-section .breakfast .card-wrap .card .img-one {
   border-radius: 10px;
   -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
           box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
@@ -262,11 +300,13 @@ header .container .nav-wrap nav ul li a:hover {
   background-size: cover;
   background-position: center center;
   cursor: pointer;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.recipe-section .desserts .card-wrap .card .img-one:hover, .recipe-section .main-course .card-wrap .card .img-one:hover, .recipe-section .breakfast .card-wrap .card .img-one:hover {
+.recipe-section .desserts .card-wrap .card .img-one:hover,
+.recipe-section .main-course .card-wrap .card .img-one:hover,
+.recipe-section .breakfast .card-wrap .card .img-one:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
@@ -275,7 +315,9 @@ header .container .nav-wrap nav ul li a:hover {
           filter: grayscale(100%);
 }
 
-.recipe-section .desserts .card-wrap .card .img-two, .recipe-section .main-course .card-wrap .card .img-two, .recipe-section .breakfast .card-wrap .card .img-two {
+.recipe-section .desserts .card-wrap .card .img-two,
+.recipe-section .main-course .card-wrap .card .img-two,
+.recipe-section .breakfast .card-wrap .card .img-two {
   border-radius: 10px;
   -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
           box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
@@ -285,11 +327,13 @@ header .container .nav-wrap nav ul li a:hover {
   background-size: cover;
   background-position: center center;
   cursor: pointer;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.recipe-section .desserts .card-wrap .card .img-two:hover, .recipe-section .main-course .card-wrap .card .img-two:hover, .recipe-section .breakfast .card-wrap .card .img-two:hover {
+.recipe-section .desserts .card-wrap .card .img-two:hover,
+.recipe-section .main-course .card-wrap .card .img-two:hover,
+.recipe-section .breakfast .card-wrap .card .img-two:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
@@ -298,7 +342,9 @@ header .container .nav-wrap nav ul li a:hover {
           filter: grayscale(100%);
 }
 
-.recipe-section .desserts .card-wrap .card .img-three, .recipe-section .main-course .card-wrap .card .img-three, .recipe-section .breakfast .card-wrap .card .img-three {
+.recipe-section .desserts .card-wrap .card .img-three,
+.recipe-section .main-course .card-wrap .card .img-three,
+.recipe-section .breakfast .card-wrap .card .img-three {
   border-radius: 10px;
   -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
           box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
@@ -308,11 +354,13 @@ header .container .nav-wrap nav ul li a:hover {
   background-size: cover;
   background-position: center center;
   cursor: pointer;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.recipe-section .desserts .card-wrap .card .img-three:hover, .recipe-section .main-course .card-wrap .card .img-three:hover, .recipe-section .breakfast .card-wrap .card .img-three:hover {
+.recipe-section .desserts .card-wrap .card .img-three:hover,
+.recipe-section .main-course .card-wrap .card .img-three:hover,
+.recipe-section .breakfast .card-wrap .card .img-three:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
@@ -321,7 +369,9 @@ header .container .nav-wrap nav ul li a:hover {
           filter: grayscale(100%);
 }
 
-.recipe-section .desserts .card-wrap .card .img-four, .recipe-section .main-course .card-wrap .card .img-four, .recipe-section .breakfast .card-wrap .card .img-four {
+.recipe-section .desserts .card-wrap .card .img-four,
+.recipe-section .main-course .card-wrap .card .img-four,
+.recipe-section .breakfast .card-wrap .card .img-four {
   border-radius: 10px;
   -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
           box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
@@ -331,11 +381,13 @@ header .container .nav-wrap nav ul li a:hover {
   background-size: cover;
   background-position: center center;
   cursor: pointer;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.recipe-section .desserts .card-wrap .card .img-four:hover, .recipe-section .main-course .card-wrap .card .img-four:hover, .recipe-section .breakfast .card-wrap .card .img-four:hover {
+.recipe-section .desserts .card-wrap .card .img-four:hover,
+.recipe-section .main-course .card-wrap .card .img-four:hover,
+.recipe-section .breakfast .card-wrap .card .img-four:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
@@ -344,7 +396,9 @@ header .container .nav-wrap nav ul li a:hover {
           filter: grayscale(100%);
 }
 
-.recipe-section .desserts .card-wrap .card .img-five, .recipe-section .main-course .card-wrap .card .img-five, .recipe-section .breakfast .card-wrap .card .img-five {
+.recipe-section .desserts .card-wrap .card .img-five,
+.recipe-section .main-course .card-wrap .card .img-five,
+.recipe-section .breakfast .card-wrap .card .img-five {
   border-radius: 10px;
   -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
           box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
@@ -354,11 +408,13 @@ header .container .nav-wrap nav ul li a:hover {
   background-size: cover;
   background-position: center center;
   cursor: pointer;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.recipe-section .desserts .card-wrap .card .img-five:hover, .recipe-section .main-course .card-wrap .card .img-five:hover, .recipe-section .breakfast .card-wrap .card .img-five:hover {
+.recipe-section .desserts .card-wrap .card .img-five:hover,
+.recipe-section .main-course .card-wrap .card .img-five:hover,
+.recipe-section .breakfast .card-wrap .card .img-five:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
@@ -367,7 +423,9 @@ header .container .nav-wrap nav ul li a:hover {
           filter: grayscale(100%);
 }
 
-.recipe-section .desserts .card-wrap .card .img-six, .recipe-section .main-course .card-wrap .card .img-six, .recipe-section .breakfast .card-wrap .card .img-six {
+.recipe-section .desserts .card-wrap .card .img-six,
+.recipe-section .main-course .card-wrap .card .img-six,
+.recipe-section .breakfast .card-wrap .card .img-six {
   border-radius: 10px;
   -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
           box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
@@ -377,11 +435,13 @@ header .container .nav-wrap nav ul li a:hover {
   background-size: cover;
   background-position: center center;
   cursor: pointer;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.recipe-section .desserts .card-wrap .card .img-six:hover, .recipe-section .main-course .card-wrap .card .img-six:hover, .recipe-section .breakfast .card-wrap .card .img-six:hover {
+.recipe-section .desserts .card-wrap .card .img-six:hover,
+.recipe-section .main-course .card-wrap .card .img-six:hover,
+.recipe-section .breakfast .card-wrap .card .img-six:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
@@ -390,7 +450,9 @@ header .container .nav-wrap nav ul li a:hover {
           filter: grayscale(100%);
 }
 
-.recipe-section .desserts .card-wrap .card .img-seven, .recipe-section .main-course .card-wrap .card .img-seven, .recipe-section .breakfast .card-wrap .card .img-seven {
+.recipe-section .desserts .card-wrap .card .img-seven,
+.recipe-section .main-course .card-wrap .card .img-seven,
+.recipe-section .breakfast .card-wrap .card .img-seven {
   border-radius: 10px;
   -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
           box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
@@ -400,11 +462,13 @@ header .container .nav-wrap nav ul li a:hover {
   background-size: cover;
   background-position: center center;
   cursor: pointer;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.recipe-section .desserts .card-wrap .card .img-seven:hover, .recipe-section .main-course .card-wrap .card .img-seven:hover, .recipe-section .breakfast .card-wrap .card .img-seven:hover {
+.recipe-section .desserts .card-wrap .card .img-seven:hover,
+.recipe-section .main-course .card-wrap .card .img-seven:hover,
+.recipe-section .breakfast .card-wrap .card .img-seven:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
@@ -413,7 +477,9 @@ header .container .nav-wrap nav ul li a:hover {
           filter: grayscale(100%);
 }
 
-.recipe-section .desserts .card-wrap .card .img-eight, .recipe-section .main-course .card-wrap .card .img-eight, .recipe-section .breakfast .card-wrap .card .img-eight {
+.recipe-section .desserts .card-wrap .card .img-eight,
+.recipe-section .main-course .card-wrap .card .img-eight,
+.recipe-section .breakfast .card-wrap .card .img-eight {
   border-radius: 10px;
   -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
           box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
@@ -423,11 +489,13 @@ header .container .nav-wrap nav ul li a:hover {
   background-size: cover;
   background-position: center center;
   cursor: pointer;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.recipe-section .desserts .card-wrap .card .img-eight:hover, .recipe-section .main-course .card-wrap .card .img-eight:hover, .recipe-section .breakfast .card-wrap .card .img-eight:hover {
+.recipe-section .desserts .card-wrap .card .img-eight:hover,
+.recipe-section .main-course .card-wrap .card .img-eight:hover,
+.recipe-section .breakfast .card-wrap .card .img-eight:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
@@ -436,7 +504,9 @@ header .container .nav-wrap nav ul li a:hover {
           filter: grayscale(100%);
 }
 
-.recipe-section .desserts .card-wrap .card .img-nine, .recipe-section .main-course .card-wrap .card .img-nine, .recipe-section .breakfast .card-wrap .card .img-nine {
+.recipe-section .desserts .card-wrap .card .img-nine,
+.recipe-section .main-course .card-wrap .card .img-nine,
+.recipe-section .breakfast .card-wrap .card .img-nine {
   border-radius: 10px;
   -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
           box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
@@ -446,11 +516,13 @@ header .container .nav-wrap nav ul li a:hover {
   background-size: cover;
   background-position: center center;
   cursor: pointer;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.recipe-section .desserts .card-wrap .card .img-nine:hover, .recipe-section .main-course .card-wrap .card .img-nine:hover, .recipe-section .breakfast .card-wrap .card .img-nine:hover {
+.recipe-section .desserts .card-wrap .card .img-nine:hover,
+.recipe-section .main-course .card-wrap .card .img-nine:hover,
+.recipe-section .breakfast .card-wrap .card .img-nine:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
@@ -459,7 +531,9 @@ header .container .nav-wrap nav ul li a:hover {
           filter: grayscale(100%);
 }
 
-.recipe-section .desserts .card-wrap .card .img-ten, .recipe-section .main-course .card-wrap .card .img-ten, .recipe-section .breakfast .card-wrap .card .img-ten {
+.recipe-section .desserts .card-wrap .card .img-ten,
+.recipe-section .main-course .card-wrap .card .img-ten,
+.recipe-section .breakfast .card-wrap .card .img-ten {
   border-radius: 10px;
   -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
           box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
@@ -469,11 +543,13 @@ header .container .nav-wrap nav ul li a:hover {
   background-size: cover;
   background-position: center center;
   cursor: pointer;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.recipe-section .desserts .card-wrap .card .img-ten:hover, .recipe-section .main-course .card-wrap .card .img-ten:hover, .recipe-section .breakfast .card-wrap .card .img-ten:hover {
+.recipe-section .desserts .card-wrap .card .img-ten:hover,
+.recipe-section .main-course .card-wrap .card .img-ten:hover,
+.recipe-section .breakfast .card-wrap .card .img-ten:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
@@ -482,7 +558,9 @@ header .container .nav-wrap nav ul li a:hover {
           filter: grayscale(100%);
 }
 
-.recipe-section .desserts .card-wrap .card .img-eleven, .recipe-section .main-course .card-wrap .card .img-eleven, .recipe-section .breakfast .card-wrap .card .img-eleven {
+.recipe-section .desserts .card-wrap .card .img-eleven,
+.recipe-section .main-course .card-wrap .card .img-eleven,
+.recipe-section .breakfast .card-wrap .card .img-eleven {
   border-radius: 10px;
   -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
           box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
@@ -492,11 +570,13 @@ header .container .nav-wrap nav ul li a:hover {
   background-size: cover;
   background-position: center center;
   cursor: pointer;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.recipe-section .desserts .card-wrap .card .img-eleven:hover, .recipe-section .main-course .card-wrap .card .img-eleven:hover, .recipe-section .breakfast .card-wrap .card .img-eleven:hover {
+.recipe-section .desserts .card-wrap .card .img-eleven:hover,
+.recipe-section .main-course .card-wrap .card .img-eleven:hover,
+.recipe-section .breakfast .card-wrap .card .img-eleven:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
@@ -505,7 +585,9 @@ header .container .nav-wrap nav ul li a:hover {
           filter: grayscale(100%);
 }
 
-.recipe-section .desserts .card-wrap .card .img-twelve, .recipe-section .main-course .card-wrap .card .img-twelve, .recipe-section .breakfast .card-wrap .card .img-twelve {
+.recipe-section .desserts .card-wrap .card .img-twelve,
+.recipe-section .main-course .card-wrap .card .img-twelve,
+.recipe-section .breakfast .card-wrap .card .img-twelve {
   border-radius: 10px;
   -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
           box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
@@ -515,11 +597,13 @@ header .container .nav-wrap nav ul li a:hover {
   background-size: cover;
   background-position: center center;
   cursor: pointer;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.recipe-section .desserts .card-wrap .card .img-twelve:hover, .recipe-section .main-course .card-wrap .card .img-twelve:hover, .recipe-section .breakfast .card-wrap .card .img-twelve:hover {
+.recipe-section .desserts .card-wrap .card .img-twelve:hover,
+.recipe-section .main-course .card-wrap .card .img-twelve:hover,
+.recipe-section .breakfast .card-wrap .card .img-twelve:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
@@ -533,33 +617,241 @@ header .container .nav-wrap nav ul li a:hover {
   background: white;
 }
 
+.search-section .search-wrap {
+  min-height: 500px;
+  background: url(../images/search-background.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
+.search-section .search-wrap .cover {
+  min-height: 500px;
+  background: rgba(0, 0, 0, 0.76);
+  position: relative;
+}
+
+.search-section .search-wrap .cover .container .text {
+  margin: auto;
+  padding: 50px 0 0 0;
+  color: white;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.search-section .search-wrap .cover .container .text p {
+  color: gray;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin: 0 0 50px 0;
+}
+
+.search-section .search-wrap .cover .container .text h1 {
+  text-transform: capitalize;
+  font-size: 50px;
+}
+
+.search-section .search-wrap .cover .container .text h1 span {
+  color: #803841;
+}
+
+.search-section .search-wrap .cover .container .searchbar {
+  width: 50%;
+  margin: auto;
+}
+
+.search-section .search-wrap .cover .container .searchbar .search {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.search-section .search-wrap .cover .container .searchbar .search .searchTerm {
+  width: 100%;
+  border: 3px solid #803841;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9dbfaf;
+}
+
+.search-section .search-wrap .cover .container .searchbar .search .searchTerm:focus {
+  color: #803841;
+}
+
+.search-section .search-wrap .cover .container .searchbar .search .searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #803841;
+  background: #803841;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.search-section .search-wrap .cover .container .searchbar .search .searchButton:focus {
+  outline: none;
+}
+
+.search-section .search-wrap .cover .options-bar {
+  height: 80px;
+  width: 100%;
+  background: #aaaaaa;
+  position: absolute;
+  bottom: 0;
+}
+
+.search-section .search-wrap .cover .options-bar .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 80px;
+}
+
+.search-section .search-wrap .cover .options-bar .container .option-wrap {
+  width: 33%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.search-section .search-wrap .cover .options-bar .container .option-wrap p {
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.search-section .search-wrap .cover .options-bar .container .option-wrap .select-options {
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-bottom: none;
+  background: #581e1e;
+  cursor: pointer;
+  color: white;
+}
+
+.search-section .search-wrap .cover .options-bar .container .option-wrap .select-options:focus {
+  outline: none;
+}
+
 @media (max-width: 1800px) {
-  .recipe-section .desserts .card-wrap .card, .recipe-section .main-course .card-wrap .card, .recipe-section .breakfast .card-wrap .card {
+  .recipe-section .desserts .card-wrap .card,
+  .recipe-section .main-course .card-wrap .card,
+  .recipe-section .breakfast .card-wrap .card {
     width: 220px;
   }
-  .recipe-section .desserts .card-wrap .card .card-img, .recipe-section .main-course .card-wrap .card .card-img, .recipe-section .breakfast .card-wrap .card .card-img {
+  .recipe-section .desserts .card-wrap .card .card-img,
+  .recipe-section .main-course .card-wrap .card .card-img,
+  .recipe-section .breakfast .card-wrap .card .card-img {
     width: 220px;
     height: 220px;
   }
 }
 
-@media (max-width: 1360px) {
-  .recipe-section .desserts .card-wrap .card, .recipe-section .main-course .card-wrap .card, .recipe-section .breakfast .card-wrap .card {
+@media (max-width: 1500px) {
+  .recipe-section .desserts .card-wrap .card,
+  .recipe-section .main-course .card-wrap .card,
+  .recipe-section .breakfast .card-wrap .card {
     width: 170px;
   }
-  .recipe-section .desserts .card-wrap .card .card-img, .recipe-section .main-course .card-wrap .card .card-img, .recipe-section .breakfast .card-wrap .card .card-img {
+  .recipe-section .desserts .card-wrap .card .card-img,
+  .recipe-section .main-course .card-wrap .card .card-img,
+  .recipe-section .breakfast .card-wrap .card .card-img {
     width: 170px;
     height: 170px;
   }
 }
 
 @media (max-width: 1024px) {
-  .recipe-section .desserts .card-wrap .card, .recipe-section .main-course .card-wrap .card, .recipe-section .breakfast .card-wrap .card {
-    width: 150px;
+  .dessert-section .top .container {
+    position: relative;
+    width: 80%;
   }
-  .recipe-section .desserts .card-wrap .card .card-img, .recipe-section .main-course .card-wrap .card .card-img, .recipe-section .breakfast .card-wrap .card .card-img {
-    width: 150px;
-    height: 150px;
+  .dessert-section .top .container .dessert-text {
+    width: 55%;
+    padding: 50px 0;
+  }
+  .dessert-section .top .container .dessert-img {
+    right: 0;
+  }
+  .recipe-section .desserts .card-wrap,
+  .recipe-section .main-course .card-wrap,
+  .recipe-section .breakfast .card-wrap {
+    margin-bottom: 70px;
+    width: 100%;
+  }
+  .recipe-section .desserts .card-wrap .card,
+  .recipe-section .main-course .card-wrap .card,
+  .recipe-section .breakfast .card-wrap .card {
+    margin-bottom: 50px;
+    width: 220px;
+  }
+  .recipe-section .desserts .card-wrap .card .card-img,
+  .recipe-section .main-course .card-wrap .card .card-img,
+  .recipe-section .breakfast .card-wrap .card .card-img {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+  header {
+    width: 100%;
+    padding: 20px 0 0 0;
+  }
+  header .container {
+    width: 100%;
+    text-align: center;
+  }
+  header .container .title {
+    margin: auto;
+  }
+  header .container .nav-wrap {
+    display: block;
+    width: 100%;
+  }
+  header .container .nav-wrap nav {
+    width: 100%;
+    margin: auto;
+  }
+  header .container .nav-wrap nav ul {
+    padding: 15px 0 10px 0;
+  }
+  header .container .nav-wrap nav ul li {
+    padding: 10px 20px;
+  }
+  header .container .nav-wrap nav ul li:nth-child(2) {
+    padding: 10px 20px;
+    border-left: solid 1px #eee;
+    border-right: solid 1px #eee;
+  }
+  .welcome-section .hero-wrap .hero p {
+    font-size: 12px;
+  }
+  .welcome-section .hero-wrap .hero h1 {
+    font-size: 26px;
+  }
+  .dessert-section .top .container .dessert-text {
+    width: 100%;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  .dessert-section .top .container .dessert-img {
+    display: none;
+  }
+  .recipe-section #search {
+    padding-bottom: 115px;
   }
 }
 /*# sourceMappingURL=style.css.map */
