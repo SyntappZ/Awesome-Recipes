@@ -9,8 +9,7 @@
 
 
     <link href="https://fonts.googleapis.com/css?family=Courgette&Raleway&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <!-- <script src="https://developer.edamam.com/attribution/badge.js"></script> -->
     <link rel="stylesheet" href="css/style.css">
     </link>
@@ -182,39 +181,36 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="options-bar">
-                <div class="container">
 
-                    <div class="option-wrap">
-                        <p>Cuisine Type</p>
-                        <select class="select-options" id="CuisineType">
-                            <option value="none">none</option>
-                            <option value="2">two</option>
-                            <option value="3">three</option>
-                            <option value="4">four</option>
-                        </select>
-                    </div>
-                    <div class="option-wrap">
-                        <p>Meal Type</p>
-                        <select class="select-options" id="mealType">
-                            <option value="none">none</option>
-                            <option value="2">two</option>
-                            <option value="3">three</option>
-                            <option value="4">four</option>
-                        </select>
-                    </div>
-                    <div class="option-wrap">
-                        <p>Health</p>
-                        <select class="select-options" id="health">
-                            <option value="none">none</option>
-                            <option value="2">two</option>
-                            <option value="3">three</option>
-                            <option value="4">four</option>
-                        </select>
-                    </div>
+
+                <div class="options-bar">
+                    <ul id="main">
+                        <li>Cuisine type
+                            <ul class="drop">
+                                <div class="cuisine-list"> </div>
+                            </ul>
+                        </li>
+                        <li>meal type
+                            <ul class="drop">
+                                <div class="meal-list"></div>
+                            </ul>
+                        </li>
+                        <li>dish type
+                            <ul class="drop">
+                                <div class="dish-list"></div>
+                            </ul>
+                        </li>
+                        <li>diet
+                            <ul class="drop">
+                                <div class="diet-list"></div>
+                            </ul>
+                        </li>
+                        <div id="marker"></div>
+                    </ul>
                 </div>
             </div>
+
+
         </div>
     </section>
 

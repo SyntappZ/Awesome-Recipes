@@ -3,8 +3,27 @@ $darkgrey: rgb(128, 128, 128);
 $black: #333;
 $red: #cf2727;
 $blood: #902f3a;
-$lightred: #d49595;
+$lightred: #d4a4a4;
 $brown: rgb(88, 30, 30);
+
+$min-width: 120px;
+
+@mixin transform($value){
+  -webkit-transform: ($value);
+     -moz-transform: ($value);
+      -ms-transform: ($value);
+          transform: ($value);
+}
+@mixin transition($value){
+  -webkit-transition: ($value);
+     -moz-transition: ($value);
+      -ms-transition: ($value);
+          transition: ($value);
+}
+
+
+
+
 
 body {
   margin: 0;
@@ -37,7 +56,7 @@ header {
   padding: 20px 0;
   background: rgb(0, 0, 0);
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   .container {
     display: flex;
     justify-content: space-between;
@@ -279,9 +298,9 @@ header {
     background-position: center center;
 
     .cover {
-      min-height: 410px;
+      min-height: 500px;
       background: rgba(0, 0, 0, 0.76);
-      
+      position: relative;
       .container {
         .text {
           margin: auto;
@@ -346,44 +365,90 @@ header {
     }
 
     .options-bar {
-      height: 90px;
-      width: 100%;
-      background: rgba(170, 170, 170, 0.753);
-     
-      .container {
-        display: flex;
-        align-items: flex-end;
-        height: 100%;
-        .option-wrap {
-          width: 33%;
-          margin: 0 auto;
+      width:100%;
+      background:$blood;
+      position: absolute;
+      bottom:0;
+      display:flex;
+      justify-content: center;
+      *{
+        box-sizing: border-box;
+      }
+      #main{
+        position: relative;
+        list-style: none;
+        background: $blood;
+        font-weight: 400;
+        font-size: 0;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 0;
+        
+        
+        
+        li{
+          font-size: 0.8rem;
+          display: inline-block;
+          position: relative;
+          padding: 15px 20px;
+          cursor: pointer;
+          z-index: 5;
+          min-width: $min-width;
           text-align: center;
-      
-          
-          p {
-            text-transform: uppercase;
-            font-size: 13px;
-            padding:10px 0;
+        }  
+      }
+      li{
+        margin: 0;
+      }
+      .drop{
+          overflow: hidden;
+          list-style: none;
+          position: absolute;
+          padding: 0;
+          width: 100%;
+          left: 0;
+          top: 48px;
+          div{
+            @include transform(translate(0,-100%));
+            @include transition(all 0.5s 0.1s);
+            position: relative;
           }
-
-          .select-options {
-            bottom: 0;
+          li{
+            display:block;
+            padding: 0;
             width: 100%;
-            height: 30px;
-            border: none;
-            border-bottom: none;
-            background: $black;
-
-            cursor: pointer;
-            color: white;
-
-            &:focus {
-              outline: none;
+            background: $blood;
+            transition: .2s;
+            &:hover {
+              background:$lightred;
             }
           }
         }
+      #marker{
+        height: 6px;
+        background: $lightred;
+        position: absolute;
+        bottom: 0;
+        width: $min-width;
+        z-index: 1;
+        @include transition(all .2s);
       }
+      
+      @for $i from 1 through 4{
+        #main li:nth-child(#{$i}){
+          &:hover ul div{
+           @include transform(translate(0,0)); 
+          }
+          &:hover ~ #marker{
+            @include transform(translate(#{(-1+$i)*$min-width},0));
+          }
+        }    
+      }
+      
+      
+      
     }
+     
   }
 }
 

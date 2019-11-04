@@ -31,7 +31,7 @@ header {
   padding: 20px 0;
   background: black;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
 }
 
 header .container {
@@ -193,14 +193,14 @@ header .container .nav-wrap nav ul li a:hover {
   padding: 100px 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  color: #d49595;
+  color: #d4a4a4;
   font-size: 18px;
 }
 
 .dessert-section .top .container .button {
-  color: #d49595;
+  color: #d4a4a4;
   margin: 40px 0;
-  border: solid 2px #d49595;
+  border: solid 2px #d4a4a4;
 }
 
 .dessert-section .top .container .dessert-img {
@@ -625,8 +625,9 @@ header .container .nav-wrap nav ul li a:hover {
 }
 
 .search-section .search-wrap .cover {
-  min-height: 410px;
+  min-height: 500px;
   background: rgba(0, 0, 0, 0.76);
+  position: relative;
 }
 
 .search-section .search-wrap .cover .container .text {
@@ -698,46 +699,129 @@ header .container .nav-wrap nav ul li a:hover {
 }
 
 .search-section .search-wrap .options-bar {
-  height: 90px;
   width: 100%;
-  background: rgba(170, 170, 170, 0.753);
-}
-
-.search-section .search-wrap .options-bar .container {
+  background: #902f3a;
+  position: absolute;
+  bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.search-section .search-wrap .options-bar .container .option-wrap {
-  width: 33%;
-  margin: 0 auto;
+.search-section .search-wrap .options-bar * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.search-section .search-wrap .options-bar #main {
+  position: relative;
+  list-style: none;
+  background: #902f3a;
+  font-weight: 400;
+  font-size: 0;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0;
+}
+
+.search-section .search-wrap .options-bar #main li {
+  font-size: 0.8rem;
+  display: inline-block;
+  position: relative;
+  padding: 15px 20px;
+  cursor: pointer;
+  z-index: 5;
+  min-width: 120px;
   text-align: center;
 }
 
-.search-section .search-wrap .options-bar .container .option-wrap p {
-  text-transform: uppercase;
-  font-size: 13px;
-  padding: 10px 0;
+.search-section .search-wrap .options-bar li {
+  margin: 0;
 }
 
-.search-section .search-wrap .options-bar .container .option-wrap .select-options {
-  bottom: 0;
+.search-section .search-wrap .options-bar .drop {
+  overflow: hidden;
+  list-style: none;
+  position: absolute;
+  padding: 0;
   width: 100%;
-  height: 30px;
-  border: none;
-  border-bottom: none;
-  background: #333;
-  cursor: pointer;
-  color: white;
+  left: 0;
+  top: 48px;
 }
 
-.search-section .search-wrap .options-bar .container .option-wrap .select-options:focus {
-  outline: none;
+.search-section .search-wrap .options-bar .drop div {
+  -webkit-transform: translate(0, -100%);
+  transform: translate(0, -100%);
+  -webkit-transition: all 0.5s 0.1s;
+  transition: all 0.5s 0.1s;
+  position: relative;
+}
+
+.search-section .search-wrap .options-bar .drop li {
+  display: block;
+  padding: 0;
+  width: 100%;
+  background: #902f3a;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.search-section .search-wrap .options-bar .drop li:hover {
+  background: #d4a4a4;
+}
+
+.search-section .search-wrap .options-bar #marker {
+  height: 6px;
+  background: #d4a4a4;
+  position: absolute;
+  bottom: 0;
+  width: 120px;
+  z-index: 1;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.search-section .search-wrap .options-bar #main li:nth-child(1):hover ul div {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.search-section .search-wrap .options-bar #main li:nth-child(1):hover ~ #marker {
+  -webkit-transform: translate(0px, 0);
+  transform: translate(0px, 0);
+}
+
+.search-section .search-wrap .options-bar #main li:nth-child(2):hover ul div {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.search-section .search-wrap .options-bar #main li:nth-child(2):hover ~ #marker {
+  -webkit-transform: translate(120px, 0);
+  transform: translate(120px, 0);
+}
+
+.search-section .search-wrap .options-bar #main li:nth-child(3):hover ul div {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.search-section .search-wrap .options-bar #main li:nth-child(3):hover ~ #marker {
+  -webkit-transform: translate(240px, 0);
+  transform: translate(240px, 0);
+}
+
+.search-section .search-wrap .options-bar #main li:nth-child(4):hover ul div {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.search-section .search-wrap .options-bar #main li:nth-child(4):hover ~ #marker {
+  -webkit-transform: translate(360px, 0);
+  transform: translate(360px, 0);
 }
 
 @media (max-width: 1800px) {
