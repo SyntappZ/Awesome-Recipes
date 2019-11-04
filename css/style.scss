@@ -2,7 +2,7 @@ $grey: #e2e2e2;
 $darkgrey: rgb(128, 128, 128);
 $black: #333;
 $red: #cf2727;
-$blood: #803841;
+$blood: #902f3a;
 $lightred: #d49595;
 $brown: rgb(88, 30, 30);
 
@@ -279,9 +279,9 @@ header {
     background-position: center center;
 
     .cover {
-      min-height: 500px;
+      min-height: 410px;
       background: rgba(0, 0, 0, 0.76);
-      position: relative;
+      
       .container {
         .text {
           margin: auto;
@@ -343,44 +343,42 @@ header {
           }
         }
       }
+    }
 
-      .options-bar {
-        height: 90px;
-        width: 100%;
-        background: rgb(170, 170, 170);
-        position: absolute;
-        bottom: 0;
+    .options-bar {
+      height: 90px;
+      width: 100%;
+      background: rgba(170, 170, 170, 0.753);
+     
+      .container {
+        display: flex;
+        align-items: flex-end;
+        height: 100%;
+        .option-wrap {
+          width: 33%;
+          margin: 0 auto;
+          text-align: center;
+      
+          
+          p {
+            text-transform: uppercase;
+            font-size: 13px;
+            padding:10px 0;
+          }
 
-        .container {
-          display: flex;
-          align-items: flex-end;
-          height: 100%;
-          .option-wrap {
-            width: 33%;
-            margin: 0 auto;
-            text-align: center;
-        
-            
-            p {
-              text-transform: uppercase;
-              font-size: 13px;
-              padding:10px 0;
-            }
+          .select-options {
+            bottom: 0;
+            width: 100%;
+            height: 30px;
+            border: none;
+            border-bottom: none;
+            background: $black;
 
-            .select-options {
-              bottom: 0;
-              width: 100%;
-              height: 30px;
-              border: none;
-              border-bottom: none;
-              background: $blood;
+            cursor: pointer;
+            color: white;
 
-              cursor: pointer;
-              color: white;
-
-              &:focus {
-                outline: none;
-              }
+            &:focus {
+              outline: none;
             }
           }
         }

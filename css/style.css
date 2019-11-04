@@ -11,7 +11,7 @@ body {
 
 .button {
   color: white;
-  background-color: #803841;
+  background-color: #902f3a;
   border: none;
   border-radius: 50px;
   text-transform: uppercase;
@@ -54,7 +54,7 @@ header .container .title {
 }
 
 header .container .title span {
-  color: #803841;
+  color: #902f3a;
 }
 
 header .container .nav-wrap {
@@ -163,24 +163,24 @@ header .container .nav-wrap nav ul li a:hover {
 }
 
 .welcome-section .hero-wrap .hero h1 span {
-  color: #803841;
+  color: #902f3a;
 }
 
 .welcome-section .hero-wrap .hero .button {
   color: white;
   margin: 40px;
-  background-color: #803841;
+  background-color: #902f3a;
 }
 
 .welcome-section .hero-wrap .hero .button:hover {
   background: white;
-  color: #803841;
+  color: #902f3a;
 }
 
 .dessert-section .top {
   width: 100%;
   min-height: 40vh;
-  background: #803841;
+  background: #902f3a;
 }
 
 .dessert-section .top .container {
@@ -251,8 +251,8 @@ header .container .nav-wrap nav ul li a:hover {
 .recipe-section .breakfast .button {
   display: block;
   background: none;
-  color: #803841;
-  border: solid 2px #803841;
+  color: #902f3a;
+  border: solid 2px #902f3a;
   margin: 30px auto;
   padding: 15px 25px;
 }
@@ -260,7 +260,7 @@ header .container .nav-wrap nav ul li a:hover {
 .recipe-section .desserts .button:hover,
 .recipe-section .main-course .button:hover,
 .recipe-section .breakfast .button:hover {
-  background: #803841;
+  background: #902f3a;
   color: white;
 }
 
@@ -625,9 +625,8 @@ header .container .nav-wrap nav ul li a:hover {
 }
 
 .search-section .search-wrap .cover {
-  min-height: 500px;
+  min-height: 410px;
   background: rgba(0, 0, 0, 0.76);
-  position: relative;
 }
 
 .search-section .search-wrap .cover .container .text {
@@ -651,7 +650,7 @@ header .container .nav-wrap nav ul li a:hover {
 }
 
 .search-section .search-wrap .cover .container .text h1 span {
-  color: #803841;
+  color: #902f3a;
 }
 
 .search-section .search-wrap .cover .container .searchbar {
@@ -669,7 +668,7 @@ header .container .nav-wrap nav ul li a:hover {
 
 .search-section .search-wrap .cover .container .searchbar .search .searchTerm {
   width: 100%;
-  border: 3px solid #803841;
+  border: 3px solid #902f3a;
   border-right: none;
   padding: 5px;
   height: 20px;
@@ -679,14 +678,14 @@ header .container .nav-wrap nav ul li a:hover {
 }
 
 .search-section .search-wrap .cover .container .searchbar .search .searchTerm:focus {
-  color: #803841;
+  color: #902f3a;
 }
 
 .search-section .search-wrap .cover .container .searchbar .search .searchButton {
   width: 40px;
   height: 36px;
-  border: 1px solid #803841;
-  background: #803841;
+  border: 1px solid #902f3a;
+  background: #902f3a;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;
@@ -698,15 +697,13 @@ header .container .nav-wrap nav ul li a:hover {
   outline: none;
 }
 
-.search-section .search-wrap .cover .options-bar {
+.search-section .search-wrap .options-bar {
   height: 90px;
   width: 100%;
-  background: #aaaaaa;
-  position: absolute;
-  bottom: 0;
+  background: rgba(170, 170, 170, 0.753);
 }
 
-.search-section .search-wrap .cover .options-bar .container {
+.search-section .search-wrap .options-bar .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -716,30 +713,30 @@ header .container .nav-wrap nav ul li a:hover {
   height: 100%;
 }
 
-.search-section .search-wrap .cover .options-bar .container .option-wrap {
+.search-section .search-wrap .options-bar .container .option-wrap {
   width: 33%;
   margin: 0 auto;
   text-align: center;
 }
 
-.search-section .search-wrap .cover .options-bar .container .option-wrap p {
+.search-section .search-wrap .options-bar .container .option-wrap p {
   text-transform: uppercase;
   font-size: 13px;
   padding: 10px 0;
 }
 
-.search-section .search-wrap .cover .options-bar .container .option-wrap .select-options {
+.search-section .search-wrap .options-bar .container .option-wrap .select-options {
   bottom: 0;
   width: 100%;
   height: 30px;
   border: none;
   border-bottom: none;
-  background: #803841;
+  background: #333;
   cursor: pointer;
   color: white;
 }
 
-.search-section .search-wrap .cover .options-bar .container .option-wrap .select-options:focus {
+.search-section .search-wrap .options-bar .container .option-wrap .select-options:focus {
   outline: none;
 }
 
