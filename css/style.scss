@@ -412,6 +412,10 @@ header {
             @include transform(translate(0,-100%));
             @include transition(all 0.5s 0.1s);
             position: relative;
+            ul {
+              margin:0;
+              padding:0;
+            }
           }
           li{
             display:block;
@@ -436,9 +440,7 @@ header {
       
       @for $i from 1 through 4{
         #main li:nth-child(#{$i}){
-          &:hover ul div{
-           @include transform(translate(0,0)); 
-          }
+         
           &:hover ~ #marker{
             @include transform(translate(#{(-1+$i)*$min-width},0));
           }

@@ -760,6 +760,11 @@ header .container .nav-wrap nav ul li a:hover {
   position: relative;
 }
 
+.search-section .search-wrap .options-bar .drop div ul {
+  margin: 0;
+  padding: 0;
+}
+
 .search-section .search-wrap .options-bar .drop li {
   display: block;
   padding: 0;
@@ -784,19 +789,9 @@ header .container .nav-wrap nav ul li a:hover {
   transition: all 0.2s;
 }
 
-.search-section .search-wrap .options-bar #main li:nth-child(1):hover ul div {
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
-}
-
 .search-section .search-wrap .options-bar #main li:nth-child(1):hover ~ #marker {
   -webkit-transform: translate(0px, 0);
   transform: translate(0px, 0);
-}
-
-.search-section .search-wrap .options-bar #main li:nth-child(2):hover ul div {
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
 }
 
 .search-section .search-wrap .options-bar #main li:nth-child(2):hover ~ #marker {
@@ -804,19 +799,9 @@ header .container .nav-wrap nav ul li a:hover {
   transform: translate(120px, 0);
 }
 
-.search-section .search-wrap .options-bar #main li:nth-child(3):hover ul div {
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
-}
-
 .search-section .search-wrap .options-bar #main li:nth-child(3):hover ~ #marker {
   -webkit-transform: translate(240px, 0);
   transform: translate(240px, 0);
-}
-
-.search-section .search-wrap .options-bar #main li:nth-child(4):hover ul div {
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
 }
 
 .search-section .search-wrap .options-bar #main li:nth-child(4):hover ~ #marker {
