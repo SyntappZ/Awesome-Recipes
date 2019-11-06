@@ -8,17 +8,27 @@ const dishTypeElement = document.querySelector(".dish-list");
 const dietTypeElement = document.querySelector(".diet-list");
 const dropBtns = document.querySelectorAll(".drop-btns");
 const cardElements = document.querySelectorAll('.card')
+const loadingScreen = document.querySelector('.loading-page')
+window.onload = (event) => {
+  console.log('page is fully loaded');
+  loadingScreen.style.opacity = '0';
+  setTimeout(() => {
+    loadingScreen.style.display = 'none';
+  }, 300);
+};
+
 
 cardElements.forEach(card => {
   let link = document.createElement('a');
   link.setAttribute('href', '#results');
-
+  link.setAttribute('aria-label', "scroll down to search results")
+  card = card.firstElementChild;
   card.parentNode.insertBefore(link, card)
 
   link.append(card)
 
   card.onclick = function() {
-    searchRecipes(this.lastElementChild.textContent);
+    //searchRecipes(this.lastElementChild.textContent);
   }
 })
 

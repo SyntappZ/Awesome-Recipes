@@ -17,6 +17,15 @@
 </head>
 
 <body>
+    <div class="loading-page">
+        <div class="loader-wrapper">
+            <h1 class="title">Awesome <span>Recipes</span> </h1>
+
+           <span class="loader"><span class="loader-inner"></span></span>
+        </div>
+        
+    </div>
+
     <header>
         <div class="container">
 
@@ -47,7 +56,7 @@
                         </h1>
                         <h1>food experience</h1>
                     </div>
-                    <a href="#recipes"><button class="button">recipes</button></a>
+                    <a href="#recipes"><button class="button" aria-label="recipes">recipes</button></a>
                 </div>
 
             </div>
@@ -73,6 +82,9 @@
 
     <section class="recipe-section">
 
+            <!-- <a href="#results">
+                    <div class="img-one card-img"></div>
+                    </a> -->
 
         <div class="desserts">
             <div class="container">
@@ -80,7 +92,7 @@
                     <h2>Dessert Recipes.</h2>
                     <p>Search thousands of yummy dessert recipes.</p>
                 </div>
-                <button class="button" >Search Desserts</button>
+                <button class="button" aria-label="search desserts">Search Desserts</button>
                 <div class="card-wrap">
                     <div class="card">
                         <div class="img-one card-img"></div>
@@ -109,7 +121,7 @@
                     <h2>Main Course Recipes.</h2>
                     <p>Search thousands of main course meals.</p>
                 </div>
-                <button class="button">Search Meals</button>
+                <button class="button" aria-label="search meals">Search Meals</button>
                 <div class="card-wrap">
                     <div class="card">
                         <div class="img-five card-img"></div>
@@ -137,7 +149,7 @@
                     <h2>Breakfast Recipes.</h2>
                     <p>Search thousands of awesome breakfasts.</p>
                 </div>
-                <button class="button">Search Breakfasts</button>
+                <button class="button" aria-label="search breakfast">Search Breakfasts</button>
                 <div class="card-wrap">
                     <div class="card">
                         <div class="img-nine card-img"></div>
@@ -175,8 +187,8 @@
 
                     <div class="searchbar">
                         <form class="search">
-                            <input type="text" class="searchTerm" placeholder="What would you like to eat?">
-                            <button type="submit" class="searchButton">
+                            <input type="text" class="searchTerm" aria-label="search for recipes" placeholder="What would you like to eat?">
+                            <button type="submit" class="searchButton" aria-label="search button">
                                 <i class="fa fa-search"></i>
                             </button>
                         </form>
@@ -226,7 +238,11 @@
 
         </div>
     </section>
-    <section id="results" class="results-section"></section>
+    <section id="results" class="results-section">
+        <div class="resultCards-wrap">
+
+        </div>
+    </section>
     <footer></footer>
 
 
