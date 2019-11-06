@@ -1,8 +1,54 @@
-// import { getData } from "./recipeData.js";
+import { recipeData } from "./recipeData.js";
+
+
+const searchForm = document.querySelector(".search");
+const cuisineTypeElement = document.querySelector(".cuisine-list");
+const mealTypeElement = document.querySelector(".meal-list");
+const dishTypeElement = document.querySelector(".dish-list");
+const dietTypeElement = document.querySelector(".diet-list");
+const dropBtns = document.querySelectorAll(".drop-btns");
+const cardElements = document.querySelectorAll('.card')
+
+cardElements.forEach(card => {
+  let link = document.createElement('a');
+  link.setAttribute('href', '#results');
+
+  card.parentNode.insertBefore(link, card)
+
+  link.append(card)
+
+  card.onclick = function() {
+    searchRecipes(this.lastElementChild.textContent);
+  }
+})
+
 force.bindHashes();
 
+let foodOptions = {
+  mealType: "",
+  cuisineType: "",
+  dishType: "",
+  diet: ""
+};
 
-let cuisineTypeElement = document.querySelector(".cuisine-list");
+
+
+
+function mealOptionSelector(foodList, foodType, text) {
+  document.querySelectorAll(foodList).forEach(function(e) {
+    e.onclick = function() {
+      foodOptions[foodType] = `&${foodType}=${this.textContent.toLowerCase()}`;
+      if (this.textContent.toLowerCase() === "none") {
+        this.closest(".drop-btns").firstElementChild.textContent = text;
+      } else {
+        this.closest(
+          ".drop-btns"
+        ).firstElementChild.textContent = this.textContent.toUpperCase();
+      }
+    };
+  });
+}
+
 let cuisineList = [
   "None",
   "American",
@@ -25,25 +71,19 @@ let cuisineList = [
   "South East Asian"
 ];
 cuisineList.forEach(x => {
-  cuisineTypeElement.innerHTML += `<li>${x}</li>`;
+  cuisineTypeElement.innerHTML += `<li class="cuisine">${x}</li>`;
 });
+
+mealOptionSelector(".cuisine", "cuisineType", "CUISINE TYPE");
 
 //meal type
-let mealType = document.querySelector(".meal-list");
-["None","Breakfast", "Lunch", "Dinner", "Snack"].forEach(x => {
-  mealType.innerHTML += `<li class="meal">${x}</li>`;
+["None", "Breakfast", "Lunch", "Dinner", "Snack"].forEach(x => {
+  mealTypeElement.innerHTML += `<li class="meal">${x}</li>`;
 });
 
-document.querySelectorAll('.meal').forEach(function(e) {
-  e.onclick = function() {
-    
-   // this.closest('.drop-btns').firstElementChild.style.innerText = 'bob'
-  }
-})
+mealOptionSelector(".meal", "mealType", "MEAL TYPE");
 
 //dish type
-
-let dishTypeElement = document.querySelector(".dish-list");
 
 let dishList = [
   "None",
@@ -65,12 +105,12 @@ let dishList = [
 ];
 
 dishList.forEach(x => {
-  dishTypeElement.innerHTML += `<li>${x}</li>`;
+  dishTypeElement.innerHTML += `<li class="dish">${x}</li>`;
 });
 
-//diet
+mealOptionSelector(".dish", "dishType", "DISH TYPE");
 
-let dietTypeElement = document.querySelector(".diet-list");
+//diet
 
 let dietList = [
   "None",
@@ -83,39 +123,57 @@ let dietList = [
 ];
 
 dietList.forEach(x => {
-  dietTypeElement.innerHTML += `<li>${x}</li>`;
+  dietTypeElement.innerHTML += `<li class="diet">${x}</li>`;
 });
 
-let dropBtns = document.querySelectorAll(".drop-btns");
+mealOptionSelector(".diet", "diet", "DIET");
 
-dropBtns.forEach(function(e) {
- let open = false
-  e.onclick = function() {
-    open = !open
-    
-
-    if(open) {
-     this.children[1].firstElementChild.style.transform = "translate(0, 0)";
-
-    }else{
-      this.children[1].firstElementChild.style.transform = "translate(0, -100%)";
-
+dropBtns.forEach(button => {
+  let open = false;
+  button.onclick = function() {
+    open = !open;
+    if (open) {
+      this.children[1].style.display = 'block'
+      setTimeout(() => {
+      this.children[1].firstElementChild.style.transform = "translate(0, 0)";
+      }, 50)
+    } else {
+      this.children[1].firstElementChild.style.transform =
+        "translate(0, -100%)";
+        setTimeout(()=> {
+          this.children[1].style.display = 'none'
+        }, 500)
     }
-      
-
-    
   };
-
- 
 });
 
-// btn.addEventListener("click", () => {
-//   const recipes = getData("fish", cuisineType[2]);
-//   recipes
-//     .then(data => {
-//       console.log(data);
-//     })
-//     .catch(err => {
-//       console.log(err);
-//     });
-// });
+
+searchForm.addEventListener("submit", function(e) {
+  e.preventDefault();
+   searchRecipes(this.firstElementChild.value)
+   this.firstElementChild.value = "";
+});
+
+
+
+
+
+function searchRecipes(searchQuery) {
+  for(let option in foodOptions) {
+    if((/=none/).test(foodOptions[option])) foodOptions[option] = null;  
+  }
+  const recipes = recipeData(searchQuery, foodOptions);
+  recipes
+    .then(data => {
+      console.log(data);
+    })
+    .catch(err => {
+      console.log(err);
+      alert(err)
+    });
+}
+
+
+
+
+

@@ -93,6 +93,17 @@ header .container .nav-wrap nav ul li a:hover {
   color: #e2e2e2;
 }
 
+header .container .nav-wrap nav ul .nav-marker {
+  height: 6px;
+  background: #d4a4a4;
+  position: absolute;
+  bottom: 0;
+  width: 50px;
+  z-index: 1;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
 .welcome-section {
   width: 100%;
   height: 100vh;
@@ -613,7 +624,6 @@ header .container .nav-wrap nav ul li a:hover {
 }
 
 .search-section {
-  min-height: 100vh;
   background: white;
 }
 
@@ -743,6 +753,7 @@ header .container .nav-wrap nav ul li a:hover {
 }
 
 .search-section .search-wrap .options-bar .drop {
+  display: none;
   overflow: hidden;
   list-style: none;
   position: absolute;
@@ -770,8 +781,8 @@ header .container .nav-wrap nav ul li a:hover {
   padding: 0;
   width: 100%;
   background: #902f3a;
-  -webkit-transition: .2s;
-  transition: .2s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .search-section .search-wrap .options-bar .drop li:hover {
@@ -807,6 +818,10 @@ header .container .nav-wrap nav ul li a:hover {
 .search-section .search-wrap .options-bar #main li:nth-child(4):hover ~ #marker {
   -webkit-transform: translate(360px, 0);
   transform: translate(360px, 0);
+}
+
+.results-section {
+  height: 100vh;
 }
 
 @media (max-width: 1800px) {

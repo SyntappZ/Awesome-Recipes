@@ -7,23 +7,20 @@ $lightred: #d4a4a4;
 $brown: rgb(88, 30, 30);
 
 $min-width: 120px;
+$navMarkerWidth: 50px;
 
-@mixin transform($value){
+@mixin transform($value) {
   -webkit-transform: ($value);
-     -moz-transform: ($value);
-      -ms-transform: ($value);
-          transform: ($value);
+  -moz-transform: ($value);
+  -ms-transform: ($value);
+  transform: ($value);
 }
-@mixin transition($value){
+@mixin transition($value) {
   -webkit-transition: ($value);
-     -moz-transition: ($value);
-      -ms-transition: ($value);
-          transition: ($value);
+  -moz-transition: ($value);
+  -ms-transition: ($value);
+  transition: ($value);
 }
-
-
-
-
 
 body {
   margin: 0;
@@ -97,6 +94,16 @@ header {
               }
             }
           }
+          .nav-marker {
+            height: 6px;
+            background: $lightred;
+            position: absolute;
+            bottom: 0;
+            width: $navMarkerWidth;
+            z-index: 1;
+            @include transition(all 0.2s);
+          }
+         
         }
       }
     }
@@ -288,7 +295,7 @@ header {
 }
 
 .search-section {
-  min-height: 100vh;
+  
   background: white;
 
   .search-wrap {
@@ -365,16 +372,16 @@ header {
     }
 
     .options-bar {
-      width:100%;
-      background:$blood;
+      width: 100%;
+      background: $blood;
       position: absolute;
-      bottom:0;
-      display:flex;
+      bottom: 0;
+      display: flex;
       justify-content: center;
-      *{
+      * {
         box-sizing: border-box;
       }
-      #main{
+      #main {
         position: relative;
         list-style: none;
         background: $blood;
@@ -383,10 +390,8 @@ header {
         text-transform: uppercase;
         display: inline-block;
         padding: 0;
-        
-        
-        
-        li{
+
+        li {
           font-size: 0.8rem;
           display: inline-block;
           position: relative;
@@ -395,63 +400,63 @@ header {
           z-index: 5;
           min-width: $min-width;
           text-align: center;
-        }  
+        }
       }
-      li{
+      li {
         margin: 0;
       }
-      .drop{
-          overflow: hidden;
-          list-style: none;
-          position: absolute;
-          padding: 0;
-          width: 100%;
-          left: 0;
-          top: 48px;
-          div{
-            @include transform(translate(0,-100%));
-            @include transition(all 0.5s 0.1s);
-            position: relative;
-            ul {
-              margin:0;
-              padding:0;
-            }
-          }
-          li{
-            display:block;
+      .drop {
+        display: none;
+        overflow: hidden;
+        list-style: none;
+        position: absolute;
+        padding: 0;
+        width: 100%;
+        left: 0;
+        top: 48px;
+        div {
+          @include transform(translate(0, -100%));
+          @include transition(all 0.5s 0.1s);
+          position: relative;
+          ul {
+            margin: 0;
             padding: 0;
-            width: 100%;
-            background: $blood;
-            transition: .2s;
-            &:hover {
-              background:$lightred;
-            }
           }
         }
-      #marker{
+        li {
+          display: block;
+          padding: 0;
+          width: 100%;
+          background: $blood;
+          transition: 0.2s;
+          &:hover {
+            background: $lightred;
+          }
+        }
+      }
+      #marker {
         height: 6px;
         background: $lightred;
         position: absolute;
         bottom: 0;
         width: $min-width;
         z-index: 1;
-        @include transition(all .2s);
+        @include transition(all 0.2s);
       }
-      
-      @for $i from 1 through 4{
-        #main li:nth-child(#{$i}){
-         
-          &:hover ~ #marker{
-            @include transform(translate(#{(-1+$i)*$min-width},0));
+
+      @for $i from 1 through 4 {
+        #main li:nth-child(#{$i}) {
+          &:hover ~ #marker {
+            @include transform(translate(#{(-1 + $i) * $min-width}, 0));
           }
-        }    
+        }
       }
-      
-      
-      
     }
-     
   }
+}
+
+.results-section {
+  height:100vh;
 }
 
 $breakpoints: (
