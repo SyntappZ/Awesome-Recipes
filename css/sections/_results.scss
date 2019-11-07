@@ -1,4 +1,55 @@
 .results-section {
-    height: 100vh;
-    
+    min-height: 100vh;
+
+  .result-cards-wrap {
+    width: $full;
+    display:flex;
+    flex-wrap:wrap;
+  }
+  .recipe-card {
+      width:25%;
+      height:50vh;
+      background-size:cover;
+      background-position: center center;
+      position:relative;
+     
+  }
+  .cover {
+      width:$full;
+      height:$full;
+      background:linear-gradient(transparent, rgb(0, 0, 0));
+      position:absolute;
+  }
+  .wrap {
+      width:$full;
+      height:30%;
+      position: absolute;
+      bottom:0;
+      display:flex;
+  }
+  .text {
+    width:70%;
+    height:$full;
+    color:white;
+    padding-left: 40px;
+
+  }
+  .btn-wrap {
+    width:30%;
+    height:$full;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .info-btn {
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      background:$blood;
+      color:white;
+      
+  }
 }

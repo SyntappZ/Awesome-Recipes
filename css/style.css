@@ -651,7 +651,80 @@
 }
 
 .results-section {
-  height: 100vh;
+  min-height: 100vh;
+}
+
+.results-section .result-cards-wrap {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.results-section .recipe-card {
+  width: 25%;
+  height: 50vh;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.results-section .cover {
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black));
+  background: linear-gradient(transparent, black);
+  position: absolute;
+}
+
+.results-section .wrap {
+  width: 100%;
+  height: 30%;
+  position: absolute;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.results-section .text {
+  width: 70%;
+  height: 100%;
+  color: white;
+  padding-left: 40px;
+}
+
+.results-section .btn-wrap {
+  width: 30%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.results-section .info-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #902f3a;
+  color: white;
 }
 
 body {
@@ -677,8 +750,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   z-index: 11;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 .loading-page .loader-wrapper {

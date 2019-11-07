@@ -1,65 +1,65 @@
 .recipe-section {
-    width: 100%;
-    margin-top: 150px;
-  
-    #search {
-      padding-bottom: 69px;
+  width: $full;
+  margin-top: 150px;
+
+  #search {
+    padding-bottom: 69px;
+  }
+
+  .text-wrap {
+    text-align: center;
+
+    h2,
+    p {
+      margin: 0;
     }
-  
-    .text-wrap {
-      text-align: center;
-  
-      h2,
-      p {
-        margin: 0;
-      }
-      h2 {
-        margin: 50px 0 5px 0;
-      }
+    h2 {
+      margin: 50px 0 5px 0;
     }
-    .button {
-      display: block;
-      background: none;
-      color: $blood;
-      border: solid 2px $blood;
-      margin: 30px auto;
-      padding: 15px 25px;
-  
-      &:hover {
-        background: $blood;
-        color: white;
-      }
+  }
+  .button {
+    display: block;
+    background: none;
+    color: $blood;
+    border: solid 2px $blood;
+    margin: 30px auto;
+    padding: 15px 25px;
+
+    &:hover {
+      background: $blood;
+      color: white;
     }
-    .card-wrap {
-      width: 100%;
-      display: flex;
-      margin: 70px auto 150px auto;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-    .card {
+  }
+  .card-wrap {
+    width: $full;
+    display: flex;
+    margin: 70px auto 150px auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .card {
+    width: 250px;
+    text-align: center;
+    text-transform: capitalize;
+    margin: auto;
+  }
+  @each $name, $image in $images {
+    .img-#{$name} {
+      border-radius: 10px;
+      box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
       width: 250px;
-      text-align: center;
-      text-transform: capitalize;
-      margin: auto;
-    }
-    @each $name, $image in $images {
-      .img-#{$name} {
-        border-radius: 10px;
-        box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-        width: 250px;
-        height: 250px;
-        background: $image;
-        background-size: cover;
-        background-position: center center;
-        cursor: pointer;
-        transition: 0.3s;
-  
-        &:hover {
-          transform: scale(1.1);
-          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-          filter: grayscale(100%);
-        }
+      height: 250px;
+      background: $image;
+      background-size: cover;
+      background-position: center center;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+        filter: grayscale($full);
       }
     }
   }
+}

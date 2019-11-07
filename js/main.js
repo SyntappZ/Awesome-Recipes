@@ -1,36 +1,27 @@
 import { recipeData } from "./recipeData.js";
 
-
 const searchForm = document.querySelector(".search");
 const cuisineTypeElement = document.querySelector(".cuisine-list");
 const mealTypeElement = document.querySelector(".meal-list");
 const dishTypeElement = document.querySelector(".dish-list");
 const dietTypeElement = document.querySelector(".diet-list");
 const dropBtns = document.querySelectorAll(".drop-btns");
-const cardElements = document.querySelectorAll('.card')
-const loadingScreen = document.querySelector('.loading-page')
-window.onload = (event) => {
-  console.log('page is fully loaded');
-  loadingScreen.style.opacity = '0';
+const cardElements = document.querySelectorAll(".card");
+const loadingScreen = document.querySelector(".loading-page");
+const resultsCardsWrap = document.querySelector(".result-cards-wrap");
+
+window.onload = event => {
+  loadingScreen.style.opacity = "0";
   setTimeout(() => {
-    loadingScreen.style.display = 'none';
-  }, 300);
+    loadingScreen.style.zIndex = "-10";
+  }, 500);
 };
 
-
 cardElements.forEach(card => {
-  let link = document.createElement('a');
-  link.setAttribute('href', '#results');
-  link.setAttribute('aria-label', "scroll down to search results")
-  card = card.firstElementChild;
-  card.parentNode.insertBefore(link, card)
-
-  link.append(card)
-
   card.onclick = function() {
-    //searchRecipes(this.lastElementChild.textContent);
-  }
-})
+    searchRecipes(this.lastElementChild.textContent);
+  };
+});
 
 force.bindHashes();
 
@@ -40,9 +31,7 @@ let foodOptions = {
   dishType: "",
   diet: ""
 };
-
-
-
+let recipeDataObject = {};
 
 function mealOptionSelector(foodList, foodType, text) {
   document.querySelectorAll(foodList).forEach(function(e) {
@@ -143,47 +132,72 @@ dropBtns.forEach(button => {
   button.onclick = function() {
     open = !open;
     if (open) {
-      this.children[1].style.display = 'block'
+      this.children[1].style.display = "block";
       setTimeout(() => {
-      this.children[1].firstElementChild.style.transform = "translate(0, 0)";
-      }, 50)
+        this.children[1].firstElementChild.style.transform = "translate(0, 0)";
+      }, 50);
     } else {
       this.children[1].firstElementChild.style.transform =
         "translate(0, -100%)";
-        setTimeout(()=> {
-          this.children[1].style.display = 'none'
-        }, 500)
+      setTimeout(() => {
+        this.children[1].style.display = "none";
+      }, 500);
     }
   };
 });
 
-
 searchForm.addEventListener("submit", function(e) {
   e.preventDefault();
-   searchRecipes(this.firstElementChild.value)
-   this.firstElementChild.value = "";
+  searchRecipes(this.firstElementChild.value);
+  this.firstElementChild.value = "";
 });
 
-
-
-
-
 function searchRecipes(searchQuery) {
-  for(let option in foodOptions) {
-    if((/=none/).test(foodOptions[option])) foodOptions[option] = null;  
+  for (let option in foodOptions) {
+    if (/=none/.test(foodOptions[option])) foodOptions[option] = null;
   }
+
   const recipes = recipeData(searchQuery, foodOptions);
+
   recipes
     .then(data => {
-      console.log(data);
+      if (data.length < 1) {
+        alert("No Results found!");
+      }
+      resultCard(data);
     })
     .catch(err => {
       console.log(err);
-      alert(err)
+      alert(err);
     });
 }
 
+function resultCard(recipes) {
+  for (let i = 0; i < recipes.length; i++) {
+    let title = recipes[i].label;
+    let image = recipes[i].image;
+    let source = recipes[i].source;
+    let calories = recipes[i].calories.toString().match(/\d+\.\d/)[0];
+    resultsCardsWrap.innerHTML += `
+  <div class="recipe-card" style="background:url(${image}); background-size:cover;">
+  <div class="cover"></div>
+   
+  <div class="wrap">
+      <div class="text">
+          <h2>${title}</h2>
+          <h4>calories: ${calories}</h4>
+      </div>
+      <div class="btn-wrap">
+              <div class="info-btn">
+                  <p>info</p>
+              </div>
+          </div>
+  </div>
+  </div>
+  `;
+  }
+}
 
-
-
-
+// function getId(id) {
+//   console.log(id)
+// }
