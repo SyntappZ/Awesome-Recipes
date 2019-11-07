@@ -1,0 +1,37 @@
+$grey: #e2e2e2;
+$darkgrey: rgb(128, 128, 128);
+$black: #333;
+$red: #cf2727;
+$blood: #902f3a;
+$lightred: #d4a4a4;
+$brown: rgb(88, 30, 30);
+$min-width: 120px;
+$navMarkerWidth: 50px;
+
+$images: (
+  one: url(../images/desserts/cheesecake-full.jpg),
+  two: url(../images/desserts/doughnut.jpg),
+  three: url(../images/desserts/flaps.jpg),
+  four: url(../images/desserts/cup-cakes.jpg),
+  five: url(../images/main-course/fish.jpg),
+  six: url(../images/main-course/pork.jpg),
+  seven: url(../images/main-course/beef.jpg),
+  eight: url(../images/main-course/chicken.jpg),
+  nine: url(../images/breakfast/omelette.jpg),
+  ten: url(../images/breakfast/waffles.jpg),
+  eleven: url(../images/breakfast/pancakes.jpg),
+  twelve: url(../images/breakfast/smoothies.jpg)
+);
+
+@mixin transform($value) {
+  -webkit-transform: ($value);
+  -moz-transform: ($value);
+  -ms-transform: ($value);
+  transform: ($value);
+}
+@mixin transition($value) {
+  -webkit-transition: ($value);
+  -moz-transition: ($value);
+  -ms-transition: ($value);
+  transition: ($value);
+}

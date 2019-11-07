@@ -1,3 +1,659 @@
+.welcome-section {
+  width: 100%;
+  height: 100vh;
+}
+
+.welcome-section .background {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../images/background.jpg);
+  background-size: cover;
+  background-position: center center;
+  z-index: -1;
+  -webkit-filter: brightness(80%);
+          filter: brightness(80%);
+}
+
+.welcome-section .hero-wrap {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.welcome-section .hero {
+  width: 600px;
+  height: 400px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 50px;
+  text-align: center;
+  margin-top: 60px;
+  border-radius: 2px;
+  letter-spacing: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.welcome-section .hero p {
+  color: gray;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.welcome-section .hero h1 {
+  color: white;
+  text-transform: capitalize;
+  font-size: 60px;
+  margin: 0;
+}
+
+.welcome-section .hero h1 span {
+  color: #902f3a;
+}
+
+.welcome-section .hero .button {
+  color: white;
+  margin: 40px;
+  background-color: #902f3a;
+}
+
+.welcome-section .hero .button:hover {
+  background: white;
+  color: #902f3a;
+}
+
+.dessert-section .top {
+  width: 100%;
+  min-height: 40vh;
+  background: #902f3a;
+}
+
+.dessert-section .container {
+  position: relative;
+}
+
+.dessert-section .dessert-text {
+  width: 45%;
+  min-height: 40vh;
+  padding: 100px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #d4a4a4;
+  font-size: 18px;
+}
+
+.dessert-section .button {
+  color: #d4a4a4;
+  margin: 40px 0;
+  border: solid 2px #d4a4a4;
+}
+
+.dessert-section .dessert-img {
+  width: 450px;
+  height: 400px;
+  position: absolute;
+  margin: auto;
+  right: 0;
+  bottom: -120px;
+}
+
+.dessert-section .dessert-img img {
+  width: 100%;
+}
+
+.recipe-section {
+  width: 100%;
+  margin-top: 150px;
+}
+
+.recipe-section #search {
+  padding-bottom: 69px;
+}
+
+.recipe-section .text-wrap {
+  text-align: center;
+}
+
+.recipe-section .text-wrap h2,
+.recipe-section .text-wrap p {
+  margin: 0;
+}
+
+.recipe-section .text-wrap h2 {
+  margin: 50px 0 5px 0;
+}
+
+.recipe-section .button {
+  display: block;
+  background: none;
+  color: #902f3a;
+  border: solid 2px #902f3a;
+  margin: 30px auto;
+  padding: 15px 25px;
+}
+
+.recipe-section .button:hover {
+  background: #902f3a;
+  color: white;
+}
+
+.recipe-section .card-wrap {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 70px auto 150px auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.recipe-section .card {
+  width: 250px;
+  text-align: center;
+  text-transform: capitalize;
+  margin: auto;
+}
+
+.recipe-section .img-one {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+  width: 250px;
+  height: 250px;
+  background: url(../images/desserts/cheesecake-full.jpg);
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.recipe-section .img-one:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.recipe-section .img-two {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+  width: 250px;
+  height: 250px;
+  background: url(../images/desserts/doughnut.jpg);
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.recipe-section .img-two:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.recipe-section .img-three {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+  width: 250px;
+  height: 250px;
+  background: url(../images/desserts/flaps.jpg);
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.recipe-section .img-three:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.recipe-section .img-four {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+  width: 250px;
+  height: 250px;
+  background: url(../images/desserts/cup-cakes.jpg);
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.recipe-section .img-four:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.recipe-section .img-five {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+  width: 250px;
+  height: 250px;
+  background: url(../images/main-course/fish.jpg);
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.recipe-section .img-five:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.recipe-section .img-six {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+  width: 250px;
+  height: 250px;
+  background: url(../images/main-course/pork.jpg);
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.recipe-section .img-six:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.recipe-section .img-seven {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+  width: 250px;
+  height: 250px;
+  background: url(../images/main-course/beef.jpg);
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.recipe-section .img-seven:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.recipe-section .img-eight {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+  width: 250px;
+  height: 250px;
+  background: url(../images/main-course/chicken.jpg);
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.recipe-section .img-eight:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.recipe-section .img-nine {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+  width: 250px;
+  height: 250px;
+  background: url(../images/breakfast/omelette.jpg);
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.recipe-section .img-nine:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.recipe-section .img-ten {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+  width: 250px;
+  height: 250px;
+  background: url(../images/breakfast/waffles.jpg);
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.recipe-section .img-ten:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.recipe-section .img-eleven {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+  width: 250px;
+  height: 250px;
+  background: url(../images/breakfast/pancakes.jpg);
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.recipe-section .img-eleven:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.recipe-section .img-twelve {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
+  width: 250px;
+  height: 250px;
+  background: url(../images/breakfast/smoothies.jpg);
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.recipe-section .img-twelve:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.search-section {
+  background: white;
+}
+
+.search-section .search-wrap {
+  min-height: 500px;
+  background: url(../images/search-background.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
+.search-section .cover {
+  min-height: 500px;
+  background: rgba(0, 0, 0, 0.76);
+  position: relative;
+}
+
+.search-section .text {
+  margin: auto;
+  padding: 50px 0 0 0;
+  color: white;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.search-section .text p {
+  color: gray;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin: 0 0 50px 0;
+}
+
+.search-section .text h1 {
+  text-transform: capitalize;
+  font-size: 50px;
+}
+
+.search-section .text h1 span {
+  color: #902f3a;
+}
+
+.search-section .searchbar {
+  width: 50%;
+  margin: auto;
+}
+
+.search-section .search {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.search-section .searchTerm {
+  width: 100%;
+  border: 3px solid #902f3a;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9dbfaf;
+}
+
+.search-section .searchTerm:focus {
+  color: #902f3a;
+}
+
+.search-section .searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #902f3a;
+  background: #902f3a;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.search-section .searchButton:focus {
+  outline: none;
+}
+
+.options-bar {
+  width: 100%;
+  background: #902f3a;
+  position: absolute;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.options-bar * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.options-bar #main {
+  position: relative;
+  list-style: none;
+  background: #902f3a;
+  font-weight: 400;
+  font-size: 0;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0;
+}
+
+.options-bar #main li {
+  font-size: 0.8rem;
+  display: inline-block;
+  position: relative;
+  padding: 15px 20px;
+  cursor: pointer;
+  z-index: 5;
+  min-width: 120px;
+  text-align: center;
+}
+
+.options-bar li {
+  margin: 0;
+}
+
+.options-bar .drop {
+  display: none;
+  overflow: hidden;
+  list-style: none;
+  position: absolute;
+  padding: 0;
+  width: 100%;
+  left: 0;
+  top: 48px;
+}
+
+.options-bar .drop div {
+  -webkit-transform: translate(0, -100%);
+  transform: translate(0, -100%);
+  -webkit-transition: all 0.5s 0.1s;
+  transition: all 0.5s 0.1s;
+  position: relative;
+}
+
+.options-bar .drop div ul {
+  margin: 0;
+  padding: 0;
+}
+
+.options-bar .drop li {
+  display: block;
+  padding: 0;
+  width: 100%;
+  background: #902f3a;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.options-bar .drop li:hover {
+  background: #d4a4a4;
+}
+
+.options-bar #marker {
+  height: 6px;
+  background: #d4a4a4;
+  position: absolute;
+  bottom: 0;
+  width: 120px;
+  z-index: 1;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.options-bar #main li:nth-child(1):hover ~ #marker {
+  -webkit-transform: translate(0px, 0);
+  transform: translate(0px, 0);
+}
+
+.options-bar #main li:nth-child(2):hover ~ #marker {
+  -webkit-transform: translate(120px, 0);
+  transform: translate(120px, 0);
+}
+
+.options-bar #main li:nth-child(3):hover ~ #marker {
+  -webkit-transform: translate(240px, 0);
+  transform: translate(240px, 0);
+}
+
+.options-bar #main li:nth-child(4):hover ~ #marker {
+  -webkit-transform: translate(360px, 0);
+  transform: translate(360px, 0);
+}
+
+.results-section {
+  height: 100vh;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -21,8 +677,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   z-index: 11;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .loading-page .loader-wrapper {
@@ -43,18 +699,18 @@ body {
           align-items: center;
 }
 
-.loading-page .loader-wrapper .title {
+.loading-page .title {
   font-family: "Courgette", Courier, monospace;
   color: white;
   font-size: 40px;
   text-align: center;
 }
 
-.loading-page .loader-wrapper .title span {
+.loading-page .title span {
   color: #902f3a;
 }
 
-.loading-page .loader-wrapper .loader {
+.loading-page .loader {
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -64,7 +720,7 @@ body {
           animation: loader 2s infinite ease;
 }
 
-.loading-page .loader-wrapper .loader .loader-inner {
+.loading-page .loader-inner {
   vertical-align: top;
   display: inline-block;
   width: 100%;
@@ -198,17 +854,17 @@ header .container {
   width: 70%;
 }
 
-header .container .title {
+header .title {
   font-family: "Courgette", Courier, monospace;
   margin: 0;
   color: white;
 }
 
-header .container .title span {
+header .title span {
   color: #902f3a;
 }
 
-header .container .nav-wrap {
+header .nav-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -220,816 +876,71 @@ header .container .nav-wrap {
           justify-content: flex-end;
 }
 
-header .container .nav-wrap nav ul {
+header nav ul {
   margin: 0;
 }
 
-header .container .nav-wrap nav ul li {
+header nav li {
   display: inline-block;
   text-transform: capitalize;
 }
 
-header .container .nav-wrap nav ul li:nth-child(2) {
+header nav li:nth-child(2) {
   padding: 0 70px;
 }
 
-header .container .nav-wrap nav ul li a {
+header nav a {
   color: white;
   text-decoration: none;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-header .container .nav-wrap nav ul li a:hover {
+header nav a:hover {
   color: #e2e2e2;
 }
 
-header .container .nav-wrap nav ul .nav-marker {
-  height: 6px;
-  background: #d4a4a4;
-  position: absolute;
-  bottom: 0;
-  width: 50px;
-  z-index: 1;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-}
-
-.welcome-section {
-  width: 100%;
-  height: 100vh;
-}
-
-.welcome-section .background {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: url(../images/background.jpg);
-  background-size: cover;
-  background-position: center center;
-  z-index: -1;
-  -webkit-filter: brightness(80%);
-          filter: brightness(80%);
-}
-
-.welcome-section .hero-wrap {
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.welcome-section .hero-wrap .hero {
-  width: 600px;
-  height: 400px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 50px;
-  text-align: center;
-  margin-top: 60px;
-  border-radius: 2px;
-  letter-spacing: 2px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.welcome-section .hero-wrap .hero p {
-  color: gray;
-  text-transform: uppercase;
-  font-size: 13px;
-}
-
-.welcome-section .hero-wrap .hero h1 {
-  color: white;
-  text-transform: capitalize;
-  font-size: 60px;
-  margin: 0;
-}
-
-.welcome-section .hero-wrap .hero h1 span {
-  color: #902f3a;
-}
-
-.welcome-section .hero-wrap .hero .button {
-  color: white;
-  margin: 40px;
-  background-color: #902f3a;
-}
-
-.welcome-section .hero-wrap .hero .button:hover {
-  background: white;
-  color: #902f3a;
-}
-
-.dessert-section .top {
-  width: 100%;
-  min-height: 40vh;
-  background: #902f3a;
-}
-
-.dessert-section .top .container {
-  position: relative;
-}
-
-.dessert-section .top .container .dessert-text {
-  width: 45%;
-  min-height: 40vh;
-  padding: 100px 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  color: #d4a4a4;
-  font-size: 18px;
-}
-
-.dessert-section .top .container .button {
-  color: #d4a4a4;
-  margin: 40px 0;
-  border: solid 2px #d4a4a4;
-}
-
-.dessert-section .top .container .dessert-img {
-  width: 450px;
-  height: 400px;
-  position: absolute;
-  margin: auto;
-  right: 0;
-  bottom: -120px;
-}
-
-.dessert-section .top .container .dessert-img img {
-  width: 100%;
-}
-
-.recipe-section {
-  width: 100%;
-  margin-top: 150px;
-}
-
-.recipe-section #search {
-  padding-bottom: 69px;
-}
-
-.recipe-section .desserts .text-wrap,
-.recipe-section .main-course .text-wrap,
-.recipe-section .breakfast .text-wrap {
-  text-align: center;
-}
-
-.recipe-section .desserts .text-wrap h2,
-.recipe-section .desserts .text-wrap p,
-.recipe-section .main-course .text-wrap h2,
-.recipe-section .main-course .text-wrap p,
-.recipe-section .breakfast .text-wrap h2,
-.recipe-section .breakfast .text-wrap p {
-  margin: 0;
-}
-
-.recipe-section .desserts .text-wrap h2,
-.recipe-section .main-course .text-wrap h2,
-.recipe-section .breakfast .text-wrap h2 {
-  margin: 50px 0 5px 0;
-}
-
-.recipe-section .desserts .button,
-.recipe-section .main-course .button,
-.recipe-section .breakfast .button {
-  display: block;
-  background: none;
-  color: #902f3a;
-  border: solid 2px #902f3a;
-  margin: 30px auto;
-  padding: 15px 25px;
-}
-
-.recipe-section .desserts .button:hover,
-.recipe-section .main-course .button:hover,
-.recipe-section .breakfast .button:hover {
-  background: #902f3a;
-  color: white;
-}
-
-.recipe-section .desserts .card-wrap,
-.recipe-section .main-course .card-wrap,
-.recipe-section .breakfast .card-wrap {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 70px auto 150px auto;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.recipe-section .desserts .card-wrap .card,
-.recipe-section .main-course .card-wrap .card,
-.recipe-section .breakfast .card-wrap .card {
-  width: 250px;
-  text-align: center;
-  text-transform: capitalize;
-  margin: auto;
-}
-
-.recipe-section .desserts .card-wrap .card .img-one,
-.recipe-section .main-course .card-wrap .card .img-one,
-.recipe-section .breakfast .card-wrap .card .img-one {
-  border-radius: 10px;
-  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-  width: 250px;
-  height: 250px;
-  background: url(../images/desserts/cheesecake-full.jpg);
-  background-size: cover;
-  background-position: center center;
-  cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.recipe-section .desserts .card-wrap .card .img-one:hover,
-.recipe-section .main-course .card-wrap .card .img-one:hover,
-.recipe-section .breakfast .card-wrap .card .img-one:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-}
-
-.recipe-section .desserts .card-wrap .card .img-two,
-.recipe-section .main-course .card-wrap .card .img-two,
-.recipe-section .breakfast .card-wrap .card .img-two {
-  border-radius: 10px;
-  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-  width: 250px;
-  height: 250px;
-  background: url(../images/desserts/doughnut.jpg);
-  background-size: cover;
-  background-position: center center;
-  cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.recipe-section .desserts .card-wrap .card .img-two:hover,
-.recipe-section .main-course .card-wrap .card .img-two:hover,
-.recipe-section .breakfast .card-wrap .card .img-two:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-}
-
-.recipe-section .desserts .card-wrap .card .img-three,
-.recipe-section .main-course .card-wrap .card .img-three,
-.recipe-section .breakfast .card-wrap .card .img-three {
-  border-radius: 10px;
-  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-  width: 250px;
-  height: 250px;
-  background: url(../images/desserts/flaps.jpg);
-  background-size: cover;
-  background-position: center center;
-  cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.recipe-section .desserts .card-wrap .card .img-three:hover,
-.recipe-section .main-course .card-wrap .card .img-three:hover,
-.recipe-section .breakfast .card-wrap .card .img-three:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-}
-
-.recipe-section .desserts .card-wrap .card .img-four,
-.recipe-section .main-course .card-wrap .card .img-four,
-.recipe-section .breakfast .card-wrap .card .img-four {
-  border-radius: 10px;
-  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-  width: 250px;
-  height: 250px;
-  background: url(../images/desserts/cup-cakes.jpg);
-  background-size: cover;
-  background-position: center center;
-  cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.recipe-section .desserts .card-wrap .card .img-four:hover,
-.recipe-section .main-course .card-wrap .card .img-four:hover,
-.recipe-section .breakfast .card-wrap .card .img-four:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-}
-
-.recipe-section .desserts .card-wrap .card .img-five,
-.recipe-section .main-course .card-wrap .card .img-five,
-.recipe-section .breakfast .card-wrap .card .img-five {
-  border-radius: 10px;
-  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-  width: 250px;
-  height: 250px;
-  background: url(../images/main-course/fish.jpg);
-  background-size: cover;
-  background-position: center center;
-  cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.recipe-section .desserts .card-wrap .card .img-five:hover,
-.recipe-section .main-course .card-wrap .card .img-five:hover,
-.recipe-section .breakfast .card-wrap .card .img-five:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-}
-
-.recipe-section .desserts .card-wrap .card .img-six,
-.recipe-section .main-course .card-wrap .card .img-six,
-.recipe-section .breakfast .card-wrap .card .img-six {
-  border-radius: 10px;
-  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-  width: 250px;
-  height: 250px;
-  background: url(../images/main-course/pork.jpg);
-  background-size: cover;
-  background-position: center center;
-  cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.recipe-section .desserts .card-wrap .card .img-six:hover,
-.recipe-section .main-course .card-wrap .card .img-six:hover,
-.recipe-section .breakfast .card-wrap .card .img-six:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-}
-
-.recipe-section .desserts .card-wrap .card .img-seven,
-.recipe-section .main-course .card-wrap .card .img-seven,
-.recipe-section .breakfast .card-wrap .card .img-seven {
-  border-radius: 10px;
-  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-  width: 250px;
-  height: 250px;
-  background: url(../images/main-course/beef.jpg);
-  background-size: cover;
-  background-position: center center;
-  cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.recipe-section .desserts .card-wrap .card .img-seven:hover,
-.recipe-section .main-course .card-wrap .card .img-seven:hover,
-.recipe-section .breakfast .card-wrap .card .img-seven:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-}
-
-.recipe-section .desserts .card-wrap .card .img-eight,
-.recipe-section .main-course .card-wrap .card .img-eight,
-.recipe-section .breakfast .card-wrap .card .img-eight {
-  border-radius: 10px;
-  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-  width: 250px;
-  height: 250px;
-  background: url(../images/main-course/chicken.jpg);
-  background-size: cover;
-  background-position: center center;
-  cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.recipe-section .desserts .card-wrap .card .img-eight:hover,
-.recipe-section .main-course .card-wrap .card .img-eight:hover,
-.recipe-section .breakfast .card-wrap .card .img-eight:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-}
-
-.recipe-section .desserts .card-wrap .card .img-nine,
-.recipe-section .main-course .card-wrap .card .img-nine,
-.recipe-section .breakfast .card-wrap .card .img-nine {
-  border-radius: 10px;
-  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-  width: 250px;
-  height: 250px;
-  background: url(../images/breakfast/omelette.jpg);
-  background-size: cover;
-  background-position: center center;
-  cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.recipe-section .desserts .card-wrap .card .img-nine:hover,
-.recipe-section .main-course .card-wrap .card .img-nine:hover,
-.recipe-section .breakfast .card-wrap .card .img-nine:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-}
-
-.recipe-section .desserts .card-wrap .card .img-ten,
-.recipe-section .main-course .card-wrap .card .img-ten,
-.recipe-section .breakfast .card-wrap .card .img-ten {
-  border-radius: 10px;
-  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-  width: 250px;
-  height: 250px;
-  background: url(../images/breakfast/waffles.jpg);
-  background-size: cover;
-  background-position: center center;
-  cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.recipe-section .desserts .card-wrap .card .img-ten:hover,
-.recipe-section .main-course .card-wrap .card .img-ten:hover,
-.recipe-section .breakfast .card-wrap .card .img-ten:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-}
-
-.recipe-section .desserts .card-wrap .card .img-eleven,
-.recipe-section .main-course .card-wrap .card .img-eleven,
-.recipe-section .breakfast .card-wrap .card .img-eleven {
-  border-radius: 10px;
-  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-  width: 250px;
-  height: 250px;
-  background: url(../images/breakfast/pancakes.jpg);
-  background-size: cover;
-  background-position: center center;
-  cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.recipe-section .desserts .card-wrap .card .img-eleven:hover,
-.recipe-section .main-course .card-wrap .card .img-eleven:hover,
-.recipe-section .breakfast .card-wrap .card .img-eleven:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-}
-
-.recipe-section .desserts .card-wrap .card .img-twelve,
-.recipe-section .main-course .card-wrap .card .img-twelve,
-.recipe-section .breakfast .card-wrap .card .img-twelve {
-  border-radius: 10px;
-  -webkit-box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-          box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.27);
-  width: 250px;
-  height: 250px;
-  background: url(../images/breakfast/smoothies.jpg);
-  background-size: cover;
-  background-position: center center;
-  cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.recipe-section .desserts .card-wrap .card .img-twelve:hover,
-.recipe-section .main-course .card-wrap .card .img-twelve:hover,
-.recipe-section .breakfast .card-wrap .card .img-twelve:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-          box-shadow: 0 20px 34px 0 rgba(0, 0, 0, 0.459);
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-}
-
-.search-section {
-  background: white;
-}
-
-.search-section .search-wrap {
-  min-height: 500px;
-  background: url(../images/search-background.jpg);
-  background-size: cover;
-  background-position: center center;
-}
-
-.search-section .search-wrap .cover {
-  min-height: 500px;
-  background: rgba(0, 0, 0, 0.76);
-  position: relative;
-}
-
-.search-section .search-wrap .cover .container .text {
-  margin: auto;
-  padding: 50px 0 0 0;
-  color: white;
-  letter-spacing: 2px;
-  text-align: center;
-}
-
-.search-section .search-wrap .cover .container .text p {
-  color: gray;
-  text-transform: uppercase;
-  font-size: 13px;
-  margin: 0 0 50px 0;
-}
-
-.search-section .search-wrap .cover .container .text h1 {
-  text-transform: capitalize;
-  font-size: 50px;
-}
-
-.search-section .search-wrap .cover .container .text h1 span {
-  color: #902f3a;
-}
-
-.search-section .search-wrap .cover .container .searchbar {
-  width: 50%;
-  margin: auto;
-}
-
-.search-section .search-wrap .cover .container .searchbar .search {
-  width: 100%;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.search-section .search-wrap .cover .container .searchbar .search .searchTerm {
-  width: 100%;
-  border: 3px solid #902f3a;
-  border-right: none;
-  padding: 5px;
-  height: 20px;
-  border-radius: 5px 0 0 5px;
-  outline: none;
-  color: #9dbfaf;
-}
-
-.search-section .search-wrap .cover .container .searchbar .search .searchTerm:focus {
-  color: #902f3a;
-}
-
-.search-section .search-wrap .cover .container .searchbar .search .searchButton {
-  width: 40px;
-  height: 36px;
-  border: 1px solid #902f3a;
-  background: #902f3a;
-  text-align: center;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-.search-section .search-wrap .cover .container .searchbar .search .searchButton:focus {
-  outline: none;
-}
-
-.search-section .search-wrap .options-bar {
-  width: 100%;
-  background: #902f3a;
-  position: absolute;
-  bottom: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.search-section .search-wrap .options-bar * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.search-section .search-wrap .options-bar #main {
-  position: relative;
-  list-style: none;
-  background: #902f3a;
-  font-weight: 400;
-  font-size: 0;
-  text-transform: uppercase;
-  display: inline-block;
-  padding: 0;
-}
-
-.search-section .search-wrap .options-bar #main li {
-  font-size: 0.8rem;
-  display: inline-block;
-  position: relative;
-  padding: 15px 20px;
-  cursor: pointer;
-  z-index: 5;
-  min-width: 120px;
-  text-align: center;
-}
-
-.search-section .search-wrap .options-bar li {
-  margin: 0;
-}
-
-.search-section .search-wrap .options-bar .drop {
-  display: none;
-  overflow: hidden;
-  list-style: none;
-  position: absolute;
-  padding: 0;
-  width: 100%;
-  left: 0;
-  top: 48px;
-}
-
-.search-section .search-wrap .options-bar .drop div {
-  -webkit-transform: translate(0, -100%);
-  transform: translate(0, -100%);
-  -webkit-transition: all 0.5s 0.1s;
-  transition: all 0.5s 0.1s;
-  position: relative;
-}
-
-.search-section .search-wrap .options-bar .drop div ul {
-  margin: 0;
-  padding: 0;
-}
-
-.search-section .search-wrap .options-bar .drop li {
-  display: block;
-  padding: 0;
-  width: 100%;
-  background: #902f3a;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-.search-section .search-wrap .options-bar .drop li:hover {
-  background: #d4a4a4;
-}
-
-.search-section .search-wrap .options-bar #marker {
-  height: 6px;
-  background: #d4a4a4;
-  position: absolute;
-  bottom: 0;
-  width: 120px;
-  z-index: 1;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-}
-
-.search-section .search-wrap .options-bar #main li:nth-child(1):hover ~ #marker {
-  -webkit-transform: translate(0px, 0);
-  transform: translate(0px, 0);
-}
-
-.search-section .search-wrap .options-bar #main li:nth-child(2):hover ~ #marker {
-  -webkit-transform: translate(120px, 0);
-  transform: translate(120px, 0);
-}
-
-.search-section .search-wrap .options-bar #main li:nth-child(3):hover ~ #marker {
-  -webkit-transform: translate(240px, 0);
-  transform: translate(240px, 0);
-}
-
-.search-section .search-wrap .options-bar #main li:nth-child(4):hover ~ #marker {
-  -webkit-transform: translate(360px, 0);
-  transform: translate(360px, 0);
-}
-
-.results-section {
-  height: 100vh;
-}
-
 @media (max-width: 1800px) {
-  .recipe-section .desserts .card-wrap .card,
-  .recipe-section .main-course .card-wrap .card,
-  .recipe-section .breakfast .card-wrap .card {
+  .recipe-section .card {
     width: 220px;
   }
-  .recipe-section .desserts .card-wrap .card .card-img,
-  .recipe-section .main-course .card-wrap .card .card-img,
-  .recipe-section .breakfast .card-wrap .card .card-img {
+  .recipe-section .card-img {
     width: 220px;
     height: 220px;
   }
 }
 
 @media (max-width: 1500px) {
-  .recipe-section .desserts .card-wrap .card,
-  .recipe-section .main-course .card-wrap .card,
-  .recipe-section .breakfast .card-wrap .card {
+  .recipe-section .card {
     width: 170px;
   }
-  .recipe-section .desserts .card-wrap .card .card-img,
-  .recipe-section .main-course .card-wrap .card .card-img,
-  .recipe-section .breakfast .card-wrap .card .card-img {
+  .recipe-section .card-img {
     width: 170px;
     height: 170px;
   }
 }
 
 @media (max-width: 1024px) {
-  .dessert-section .top .container {
+  .dessert-section .container {
     position: relative;
     width: 80%;
   }
-  .dessert-section .top .container .dessert-text {
+  .dessert-section .dessert-text {
     width: 55%;
     padding: 50px 0;
   }
-  .dessert-section .top .container .dessert-img {
+  .dessert-section .dessert-img {
     right: 0;
   }
-  .recipe-section .desserts .card-wrap,
-  .recipe-section .main-course .card-wrap,
-  .recipe-section .breakfast .card-wrap {
+  .recipe-section .card-wrap {
     margin-bottom: 70px;
     width: 100%;
   }
-  .recipe-section .desserts .card-wrap .card,
-  .recipe-section .main-course .card-wrap .card,
-  .recipe-section .breakfast .card-wrap .card {
+  .recipe-section .card {
     margin-bottom: 50px;
     width: 220px;
   }
-  .recipe-section .desserts .card-wrap .card .card-img,
-  .recipe-section .main-course .card-wrap .card .card-img,
-  .recipe-section .breakfast .card-wrap .card .card-img {
+  .recipe-section .card-img {
     width: 220px;
     height: 220px;
   }
@@ -1047,40 +958,40 @@ header .container .nav-wrap nav ul .nav-marker {
     width: 100%;
     text-align: center;
   }
-  header .container .title {
+  header .title {
     margin: auto;
   }
-  header .container .nav-wrap {
+  header .nav-wrap {
     display: block;
     width: 100%;
   }
-  header .container .nav-wrap nav {
+  header nav {
     width: 100%;
     margin: auto;
   }
-  header .container .nav-wrap nav ul {
+  header nav ul {
     padding: 15px 0 10px 0;
   }
-  header .container .nav-wrap nav ul li {
+  header nav li {
     padding: 10px 20px;
   }
-  header .container .nav-wrap nav ul li:nth-child(2) {
+  header nav li:nth-child(2) {
     padding: 10px 20px;
     border-left: solid 1px #eee;
     border-right: solid 1px #eee;
   }
-  .welcome-section .hero-wrap .hero p {
+  .welcome-section .hero p {
     font-size: 12px;
   }
-  .welcome-section .hero-wrap .hero h1 {
+  .welcome-section .hero h1 {
     font-size: 26px;
   }
-  .dessert-section .top .container .dessert-text {
+  .dessert-section .dessert-text {
     width: 100%;
     padding: 50px 20px;
     text-align: center;
   }
-  .dessert-section .top .container .dessert-img {
+  .dessert-section .dessert-img {
     display: none;
   }
   .recipe-section #search {
