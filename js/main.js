@@ -12,6 +12,7 @@ const resultsCardsWrap = document.querySelector(".result-cards-wrap");
 
 window.onload = event => {
   loadingScreen.style.opacity = "0";
+  searchRecipes("chinese");
   setTimeout(() => {
     loadingScreen.style.zIndex = "-10";
   }, 500);
@@ -173,13 +174,24 @@ function searchRecipes(searchQuery) {
 }
 
 function resultCard(recipes) {
+  resultsCardsWrap.innerHTML = "";
   for (let i = 0; i < recipes.length; i++) {
     let title = recipes[i].label;
+    let arr = title.split(/ |-/g);
+    if (arr.length > 3) {
+      arr.length = 3;
+      title = arr.join(" ") + "...";
+    }
     let image = recipes[i].image;
     let source = recipes[i].source;
-    let calories = recipes[i].calories.toString().match(/\d+\.\d/)[0];
+    let calories = recipes[i].calories.toString().match(/\d+/)[0];
     resultsCardsWrap.innerHTML += `
-  <div class="recipe-card" style="background:url(${image}); background-size:cover;">
+  <div 
+  class="recipe-card"
+   style="background:url(${image});
+   background-size:cover;
+    background-position: center center;
+    ">
   <div class="cover"></div>
    
   <div class="wrap">

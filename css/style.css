@@ -666,8 +666,6 @@
 .results-section .recipe-card {
   width: 25%;
   height: 50vh;
-  background-size: cover;
-  background-position: center center;
   position: relative;
 }
 
@@ -696,6 +694,18 @@
   padding-left: 40px;
 }
 
+.results-section .text h2 {
+  color: #d4d4d4;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.results-section .text h4 {
+  font-size: 12px;
+  color: gray;
+  letter-spacing: 1px;
+}
+
 .results-section .btn-wrap {
   width: 30%;
   height: 100%;
@@ -711,8 +721,8 @@
 }
 
 .results-section .info-btn {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -725,6 +735,8 @@
           align-items: center;
   background: #902f3a;
   color: white;
+  font-family: "Courgette", Courier, monospace;
+  cursor: pointer;
 }
 
 body {
