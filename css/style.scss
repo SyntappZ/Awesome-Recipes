@@ -12,6 +12,10 @@ body {
   background-color: $grey;
 }
 
+.sections {
+  display:none;
+}
+
 .loading-page {
   width: $full;
   height: $full;
@@ -166,8 +170,9 @@ header {
 }
 
 footer {
-  min-height: 300px;
-  background: #333;
+  min-height: 100px;
+  background: rgb(19, 19, 19);
+
 }
 
 

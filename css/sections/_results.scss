@@ -1,5 +1,5 @@
 .results-section {
-    min-height: 100vh;
+    
 
   .result-cards-wrap {
     width: $full;
@@ -11,9 +11,12 @@
       height:50vh;
       position:relative;
       transition: .3s;
-      &:hover {
+      cursor: pointer;
+      &:hover  .cover{
         
       }
+
+
      
   }
   .source {
@@ -29,8 +32,9 @@
   .cover {
       width:$full;
       height:$full;
-      background:linear-gradient(transparent, rgb(0, 0, 0));
+      background:linear-gradient(transparent,black);
       position:absolute;
+      transition:.3s;
   }
   .wrap {
       width:$full;
@@ -52,33 +56,33 @@
     }
     h4 {
       font-size: 12px;
-      color: $darkgrey;
+      color: lighten($darkgrey, 10%);
       letter-spacing:  1px;
     }
 
   }
-  .btn-wrap {
+  .logo-wrap {
     width:30%;
     height:$full;
     display:flex;
     justify-content: center;
     align-items: center;
   }
-  .info-btn {
+  .info {
       width:50px;
       height:50px;
       border-radius:50%;
       display:flex;
       justify-content: center;
       align-items: center;
-      background:$blood;
+      background:rgb(255, 77, 77);
       color:white;
       font-family:$title-font;
       cursor: pointer;
       transition: .3s;
-      
-      &:hover {
-        background:darken($lightred, 30%);
+    
+      span {
+        color:$blood;
       }
   }
 }
@@ -95,6 +99,7 @@
   .results-section {
     .recipe-card {
       width:100%;
+      
   }
   }
 }

@@ -9,51 +9,14 @@ const dropBtns = document.querySelectorAll(".drop-btns");
 const recipeCardElements = document.querySelectorAll(".card");
 const loadingScreen = document.querySelector(".loading-page");
 const resultsCardsWrap = document.querySelector(".result-cards-wrap");
+
 const mealSearchingButtons = document.querySelectorAll(".searching-btns");
 const scrollAnchor = document.getElementById('results')
 
+const sectionWrap = document.querySelector(".sections");
 
 
 
-window.onload = event => {
-  loadingScreen.style.opacity = "0";
-  searchRecipes("chinese");
-  setTimeout(() => {
-    loadingScreen.style.zIndex = "-10";
-  }, 500);
-};
-
-recipeCardElements.forEach(card => {
-  card.onclick = function() {
-    searchRecipes(this.lastElementChild.textContent);
-    force.jump(scrollAnchor);
-  };
-});
-
-force.bindHashes();
-
-let foodOptions = {
-  mealType: "",
-  cuisineType: "",
-  dishType: "",
-  diet: ""
-};
-let recipeDataObject = {};
-
-function mealOptionSelector(foodList, foodType, text) {
-  document.querySelectorAll(foodList).forEach(function(e) {
-    e.onclick = function() {
-      foodOptions[foodType] = `&${foodType}=${this.textContent.toLowerCase()}`;
-      if (this.textContent.toLowerCase() === "none") {
-        this.closest(".drop-btns").firstElementChild.textContent = text;
-      } else {
-        this.closest(
-          ".drop-btns"
-        ).firstElementChild.textContent = this.textContent.toUpperCase();
-      }
-    };
-  });
-}
 
 let cuisineList = [
   "None",
@@ -76,6 +39,56 @@ let cuisineList = [
   "South American",
   "South East Asian"
 ];
+
+let cuisineArray = [...cuisineList]
+cuisineArray.shift();
+
+let todaysSearchQuery = cuisineArray[Math.floor(Math.random() * cuisineArray.length)]
+
+
+
+window.onload = event => {
+  sectionWrap.style.display = 'block'
+  loadingScreen.style.opacity = "0";
+  searchRecipes(todaysSearchQuery);
+
+  setTimeout(() => {
+    loadingScreen.style.zIndex = "-10";
+  }, 500);
+};
+
+recipeCardElements.forEach(card => {
+  card.onclick = function() {
+    searchRecipes(this.lastElementChild.textContent);
+    force.jump(scrollAnchor);
+  };
+});
+
+force.bindHashes();
+
+let foodOptions = {
+  mealType: "",
+  cuisineType: "",
+  dishType: "",
+  diet: ""
+};
+
+function mealOptionSelector(foodList, foodType, text) {
+  document.querySelectorAll(foodList).forEach(function(e) {
+    e.onclick = function() {
+      foodOptions[foodType] = `&${foodType}=${this.textContent.toLowerCase()}`;
+      if (this.textContent.toLowerCase() === "none") {
+        this.closest(".drop-btns").firstElementChild.textContent = text;
+      } else {
+        this.closest(
+          ".drop-btns"
+        ).firstElementChild.textContent = this.textContent.toUpperCase();
+      }
+    };
+  });
+}
+
+
 cuisineList.forEach(x => {
   cuisineTypeElement.innerHTML += `<li class="cuisine">${x}</li>`;
 });
@@ -172,7 +185,7 @@ function searchRecipes(searchQuery) {
         searchRecipes('chinese')
         alert("No Results found!");
       }
-      resultCard(data);
+      resultCard(data, getCardInformation);
     })
     .catch(err => {
       console.log(err);
@@ -189,9 +202,11 @@ mealSearchingButtons.forEach(x => {
   }
 })
 
-function resultCard(recipes) {
+function resultCard(recipes, callback) {
   resultsCardsWrap.innerHTML = "";
+  
   for (let i = 0; i < recipes.length; i++) {
+   
     let title = recipes[i].label;
     let arr = title.split(/ |-/g);
     if (arr.length > 3) {
@@ -204,6 +219,7 @@ function resultCard(recipes) {
     resultsCardsWrap.innerHTML += `
   <div 
   class="recipe-card"
+  
    style="background:url(${image});
    background-size:cover;
     background-position: center center;
@@ -218,17 +234,34 @@ function resultCard(recipes) {
           <h2>${title}</h2>
           <h4>calories: ${calories}</h4>
       </div>
-      <div class="btn-wrap">
-              <div class="info-btn">
-                  <p>info</p>
+      <div class="logo-wrap">
+              <div class="info">
+                  <p>A<span>R</span></p>
               </div>
           </div>
   </div>
   </div>
   `;
   }
+  callback(recipes)
+
+  
 }
 
-// function getId(id) {
-//   console.log(id)
-// }
+function getCardInformation(recipes) {
+ 
+  const resultCards = document.querySelectorAll('.recipe-card')
+  resultCards.forEach((card, index) => {
+  card.onclick = function() {
+    console.log(recipes[index])
+  }
+})
+}
+
+  
+
+
+
+
+  
+
