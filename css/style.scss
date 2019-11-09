@@ -165,6 +165,11 @@ header {
   }
 }
 
+footer {
+  min-height: 300px;
+  background: #333;
+}
+
 
 $breakpoints: (
   220px: 1800px,
@@ -186,38 +191,13 @@ $breakpoints: (
 }
 
 @media (max-width: 1024px) {
-  .dessert-section {
-    .container {
-      position: relative;
-      width: 80%;
-    }
-    .dessert-text {
-      width: 55%;
-      padding: 50px 0;
-    }
-    .dessert-img {
-      right: 0;
-    }
-  }
-  .recipe-section {
-    .card-wrap {
-      margin-bottom: 70px;
-      width: 100%;
-    }
-    .card {
-      margin-bottom: 50px;
-      width: 220px;
-    }
-    .card-img {
-      width: 220px;
-      height: 220px;
-    }
-  }
+  
+ 
 }
 
 @media (max-width: 600px) {
   .container {
-    width: 100%;
+    width: $full;
   }
 
   header {
@@ -225,18 +205,18 @@ $breakpoints: (
     padding: 20px 0 0 0;
 
     .container {
-      width: 100%;
       text-align: center;
+      width:$full;
     }
     .title {
       margin: auto;
     }
     .nav-wrap {
       display: block;
-      width: 100%;
+      width: $full;
     }
     nav {
-      width: 100%;
+      width: $full;
       margin: auto;
       ul {
         padding: 15px 0 10px 0;
@@ -251,30 +231,8 @@ $breakpoints: (
       }
     }
   }
-  .welcome-section {
-    .hero {
-      p {
-        font-size: 12px;
-      }
-      h1 {
-        font-size: 26px;
-      }
-    }
-  }
+ 
 
-  .dessert-section {
-    .dessert-text {
-      width: 100%;
-      padding: 50px 20px;
-      text-align: center;
-    }
-    .dessert-img {
-      display: none;
-    }
-  }
-  .recipe-section {
-    #search {
-      padding-bottom: 115px;
-    }
-  }
+ 
+  
 }

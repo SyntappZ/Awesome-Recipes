@@ -63,3 +63,29 @@
     }
   }
 }
+
+
+@media (max-width: 1024px) {
+  .recipe-section {
+    .card-wrap {
+      margin-bottom: 70px;
+      width: 100%;
+    }
+    .card {
+      margin-bottom: 50px;
+      width: 220px;
+    }
+    .card-img {
+      width: 220px;
+      height: 220px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .recipe-section {
+    #search {
+      padding-bottom: 115px;
+    }
+  }
+}

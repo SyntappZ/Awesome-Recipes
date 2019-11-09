@@ -79,6 +79,7 @@
   bottom: 0;
   display: flex;
   justify-content: center;
+  flex-wrap:wrap;
   * {
     box-sizing: border-box;
   }
@@ -115,10 +116,12 @@
     width: 100%;
     left: 0;
     top: 48px;
+    z-index: 50;
     div {
       @include transform(translate(0, -100%));
       @include transition(all 0.5s 0.1s);
       position: relative;
+     
       ul {
         margin: 0;
         padding: 0;
@@ -150,6 +153,54 @@
       &:hover ~ #marker {
         @include transform(translate(#{(-1 + $i) * $min-width}, 0));
       }
+    }
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .search-section {
+    .searchbar {
+      width: 80%;
+      
+    }
+    .text {  
+      p {
+        font-size: 12px;
+      }
+      h1 {
+        font-size: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .search-section {
+    .searchbar {
+      width: 90%;
+      
+    }
+    .text {  
+      p {
+        font-size: 10px;
+      }
+      h1 {
+        font-size: 25px;
+      }
+    }
+  }
+
+  .options-bar {
+    #main {
+      li {
+        width:100%;
+        padding: 25px 20px;
+      
+      }
+    }
+    #marker {
+      display:none;
     }
   }
 }

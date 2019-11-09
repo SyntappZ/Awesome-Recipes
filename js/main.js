@@ -6,9 +6,14 @@ const mealTypeElement = document.querySelector(".meal-list");
 const dishTypeElement = document.querySelector(".dish-list");
 const dietTypeElement = document.querySelector(".diet-list");
 const dropBtns = document.querySelectorAll(".drop-btns");
-const cardElements = document.querySelectorAll(".card");
+const recipeCardElements = document.querySelectorAll(".card");
 const loadingScreen = document.querySelector(".loading-page");
 const resultsCardsWrap = document.querySelector(".result-cards-wrap");
+const mealSearchingButtons = document.querySelectorAll(".searching-btns");
+const scrollAnchor = document.getElementById('results')
+
+
+
 
 window.onload = event => {
   loadingScreen.style.opacity = "0";
@@ -18,9 +23,10 @@ window.onload = event => {
   }, 500);
 };
 
-cardElements.forEach(card => {
+recipeCardElements.forEach(card => {
   card.onclick = function() {
     searchRecipes(this.lastElementChild.textContent);
+    force.jump(scrollAnchor);
   };
 });
 
@@ -162,7 +168,8 @@ function searchRecipes(searchQuery) {
 
   recipes
     .then(data => {
-      if (data.length < 1) {
+      if (!data.length) {
+        searchRecipes('chinese')
         alert("No Results found!");
       }
       resultCard(data);
@@ -172,6 +179,15 @@ function searchRecipes(searchQuery) {
       alert(err);
     });
 }
+
+mealSearchingButtons.forEach(x => {
+  x.onclick = function() {
+    let splitText = this.textContent.split(' ')
+    let query = splitText[splitText.length -1];
+    searchRecipes(query)
+    force.jump(scrollAnchor);
+  }
+})
 
 function resultCard(recipes) {
   resultsCardsWrap.innerHTML = "";
@@ -193,7 +209,10 @@ function resultCard(recipes) {
     background-position: center center;
     ">
   <div class="cover"></div>
-   
+   <div class="source">
+   <p>${source}</p>
+  
+   </div>
   <div class="wrap">
       <div class="text">
           <h2>${title}</h2>

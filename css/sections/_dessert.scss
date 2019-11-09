@@ -20,6 +20,10 @@
     color: $lightred;
     margin: 40px 0;
     border: solid 2px $lightred;
+    &:hover {
+      background: $lightred;
+      color: $blood;
+    }
   }
   .dessert-img {
     width: 450px;
@@ -30,6 +34,36 @@
     bottom: -120px;
     img {
       width: 100%;
+    }
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .dessert-section {
+    .container {
+      position: relative;
+      width: 80%;
+    }
+    .dessert-text {
+      width: 55%;
+      padding: 50px 0;
+    }
+    .dessert-img {
+      right: 0;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .dessert-section {
+    .dessert-text {
+      width: 100%;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .dessert-img {
+      display: none;
     }
   }
 }

@@ -60,3 +60,21 @@
     }
   }
 }
+
+
+@media (max-width: 1024px) {
+ 
+}
+
+@media (max-width: 600px) {
+  .welcome-section {
+    .hero {
+      p {
+        font-size: 12px;
+      }
+      h1 {
+        font-size: 26px;
+      }
+    }
+  }
+}

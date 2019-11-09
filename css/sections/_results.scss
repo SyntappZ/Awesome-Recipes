@@ -10,7 +10,21 @@
       width:25%;
       height:50vh;
       position:relative;
+      transition: .3s;
+      &:hover {
+        
+      }
      
+  }
+  .source {
+    padding:1px 30px;
+    height:50px;
+    background:rgba(0, 0, 0, 0.664);
+    color:white;
+    font-family:$title-font;
+    font-weight: 100;
+    letter-spacing: 1px;
+
   }
   .cover {
       width:$full;
@@ -61,6 +75,26 @@
       color:white;
       font-family:$title-font;
       cursor: pointer;
+      transition: .3s;
       
+      &:hover {
+        background:darken($lightred, 30%);
+      }
+  }
+}
+
+@media (max-width: 1024px) {
+  .results-section {
+    .recipe-card {
+      width:50%;
+  }
+  }
+}
+
+@media (max-width: 600px) {
+  .results-section {
+    .recipe-card {
+      width:100%;
+  }
   }
 }
