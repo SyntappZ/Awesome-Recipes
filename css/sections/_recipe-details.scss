@@ -1,0 +1,20 @@
+.recipe-details-section {
+    .breaker {
+        background:$blood;
+        height:100px;
+    }
+    min-height: 150vh;
+    .container {
+        margin:70px auto;
+        background:white;
+        min-height:150vh;
+    }
+    .img-wrap {
+        width:50%;
+        
+
+        img {
+            width: 100%;
+        }
+    }
+}

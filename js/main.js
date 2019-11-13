@@ -12,7 +12,7 @@ const resultsCardsWrap = document.querySelector(".result-cards-wrap");
 
 const mealSearchingButtons = document.querySelectorAll(".searching-btns");
 const scrollAnchor = document.getElementById('results')
-
+const scrollRecipeDetails = document.getElementById('recipe-details')
 const sectionWrap = document.querySelector(".sections");
 
 
@@ -61,6 +61,7 @@ recipeCardElements.forEach(card => {
   card.onclick = function() {
     searchRecipes(this.lastElementChild.textContent);
     force.jump(scrollAnchor);
+
   };
 });
 
@@ -73,7 +74,7 @@ let foodOptions = {
   diet: ""
 };
 
-function mealOptionSelector(foodList, foodType, text) {
+const mealOptionSelector = (foodList, foodType, text) => {
   document.querySelectorAll(foodList).forEach(function(e) {
     e.onclick = function() {
       foodOptions[foodType] = `&${foodType}=${this.textContent.toLowerCase()}`;
@@ -172,7 +173,7 @@ searchForm.addEventListener("submit", function(e) {
   this.firstElementChild.value = "";
 });
 
-function searchRecipes(searchQuery) {
+const searchRecipes = searchQuery => {
   for (let option in foodOptions) {
     if (/=none/.test(foodOptions[option])) foodOptions[option] = null;
   }
@@ -202,7 +203,7 @@ mealSearchingButtons.forEach(x => {
   }
 })
 
-function resultCard(recipes, callback) {
+const resultCard = (recipes, callback) => {
   resultsCardsWrap.innerHTML = "";
   
   for (let i = 0; i < recipes.length; i++) {
@@ -248,14 +249,20 @@ function resultCard(recipes, callback) {
   
 }
 
-function getCardInformation(recipes) {
+const getCardInformation = recipes => {
  
   const resultCards = document.querySelectorAll('.recipe-card')
   resultCards.forEach((card, index) => {
   card.onclick = function() {
     console.log(recipes[index])
+    force.jump(scrollRecipeDetails);
+
   }
 })
+}
+
+const recipeDetailsLayout = () => {
+
 }
 
   

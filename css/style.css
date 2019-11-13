@@ -862,6 +862,29 @@
   }
 }
 
+.recipe-details-section {
+  min-height: 150vh;
+}
+
+.recipe-details-section .breaker {
+  background: #902f3a;
+  height: 100px;
+}
+
+.recipe-details-section .container {
+  margin: 70px auto;
+  background: white;
+  min-height: 150vh;
+}
+
+.recipe-details-section .img-wrap {
+  width: 50%;
+}
+
+.recipe-details-section .img-wrap img {
+  width: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
