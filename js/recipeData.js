@@ -1,23 +1,28 @@
-const appId = "app_id=9e0bbef9";
-const apiKey = "app_key=c5dd2685a248b7b11037ca81bf677521";
+const appId = "9e0bbef9";
+const apiKey = "c5dd2685a248b7b11037ca81bf677521";
 
 export function recipeData(searchQuery, foodOptions) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
-    let cuisineType = foodOptions.cuisineType;
-    let mealType = foodOptions.mealType;
-    let dishType = foodOptions.dishType;
+    
+    console.log(foodOptions)
+    let calories = foodOptions.calories;
+    let health = foodOptions.health;
     let dietType = foodOptions.diet;
 
+    
+
+    
 
     xhr.open(
       "GET",
-      `https://api.edamam.com/search?q=${searchQuery}&to=16&app_id=${appId}&app_key=${apiKey}${cuisineType}${mealType}${dishType}${dietType}`,
+      `https://api.edamam.com/search?q=${searchQuery}&app_id=${appId}&app_key=${apiKey}&to=16${health}${calories}${dietType}`,
       true
     );
     xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
 
     xhr.onload = function() {
+      console.log(this.status)
       if (this.status == 200) {
 
         let data = JSON.parse(this.responseText);
@@ -26,8 +31,9 @@ export function recipeData(searchQuery, foodOptions) {
       }
     };
 
-    xhr.onerror = function() {
-      reject('Woops, there was an error making the request.');
+    xhr.onerror = function(err) {
+      reject('To many api requests! only 5 per minute allowed');
+      
       
     };
 
