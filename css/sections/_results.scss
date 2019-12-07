@@ -1,5 +1,8 @@
 .results-section {
-    
+   
+  a {
+    text-decoration: none;
+  }
 
   .result-cards-wrap {
     width: $full;
@@ -12,12 +15,6 @@
       position:relative;
       transition: .3s;
       cursor: pointer;
-      &:hover  .cover{
-        
-      }
-
-
-     
   }
   .source {
     padding:1px 30px;

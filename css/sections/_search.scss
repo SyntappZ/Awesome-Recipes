@@ -72,91 +72,13 @@
   }
 }
 
-.options-bar {
-  width: $full;
-  background: $blood;
+.breaker-bar {
+  width:100%;
+  height:30px;
   position: absolute;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap:wrap;
-  * {
-    box-sizing: border-box;
-  }
-  #main {
-    position: relative;
-    list-style: none;
-    background: $blood;
-    font-weight: 400;
-    font-size: 0;
-    text-transform: uppercase;
-    display: inline-block;
-    padding: 0;
-
-    li {
-      font-size: 0.8rem;
-      display: inline-block;
-      position: relative;
-      padding: 15px 20px;
-      cursor: pointer;
-      z-index: 5;
-      min-width: $min-width;
-      text-align: center;
-    }
-  }
-  li {
-    margin: 0;
-  }
-  .drop {
-    display: none;
-    overflow: hidden;
-    list-style: none;
-    position: absolute;
-    padding: 0;
-    width: 100%;
-    left: 0;
-    top: 48px;
-    z-index: 50;
-    div {
-      @include transform(translate(0, -100%));
-      @include transition(all 0.5s 0.1s);
-      position: relative;
-     
-      ul {
-        margin: 0;
-        padding: 0;
-      }
-    }
-    li {
-      display: block;
-      padding: 0;
-      width: $full;
-      background: $blood;
-      transition: 0.2s;
-      &:hover {
-        background: $lightred;
-      }
-    }
-  }
-  #marker {
-    height: 6px;
-    background: $lightred;
-    position: absolute;
-    bottom: 0;
-    width: $min-width;
-    z-index: 1;
-    @include transition(all 0.2s);
-  }
-
-  @for $i from 1 through 4 {
-    #main li:nth-child(#{$i}) {
-      &:hover ~ #marker {
-        @include transform(translate(#{(-1 + $i) * $min-width}, 0));
-      }
-    }
-  }
+  bottom:0;
+  background:$blood;
 }
-
 
 @media (max-width: 1024px) {
   .search-section {

@@ -21,7 +21,7 @@ body {
 .loading-page {
   width: $full;
   height: $full;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: #333;
@@ -174,8 +174,13 @@ header {
 footer {
   min-height: 100px;
   background: rgb(19, 19, 19);
-
+  color:white;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
+
+
 
 
 $breakpoints: (

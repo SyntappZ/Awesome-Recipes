@@ -2,18 +2,14 @@ import { recipeData } from "./recipeData.js";
 
 const searchForm = document.querySelector(".search");
 
-const caloriesElement = document.querySelector(".calorie-list");
-const healthElement = document.querySelector(".health-list");
-const dietTypeElement = document.querySelector(".diet-list");
-const dropBtns = document.querySelectorAll(".drop-btns");
+
 const recipeCardElements = document.querySelectorAll(".card");
 const loadingScreen = document.querySelector(".loading-page");
 const resultsCardsWrap = document.querySelector(".result-cards-wrap");
 
 const mealSearchingButtons = document.querySelectorAll(".searching-btns");
 const scrollAnchor = document.getElementById("results");
-const scrollRecipeDetails = document.getElementById("recipe-details");
-const sectionWrap = document.querySelector(".sections");
+
 
 let cuisineList = [
   "American",
@@ -36,17 +32,16 @@ let cuisineList = [
   "South East Asian"
 ];
 
-let todaysSearchQuery = cuisineList[Math.floor(Math.random() * cuisineList.length)];
+let todaysSearchQuery =
+  cuisineList[Math.floor(Math.random() * cuisineList.length)];
 
-window.onload = event => {
-  sectionWrap.style.display = "block";
-  loadingScreen.style.opacity = "0";
-  //searchRecipes(todaysSearchQuery);
-
+document.addEventListener("DOMContentLoaded", function() {
+  searchRecipes(todaysSearchQuery);
   setTimeout(() => {
+    loadingScreen.style.opacity = "0";
     loadingScreen.style.zIndex = "-10";
   }, 500);
-};
+});
 
 recipeCardElements.forEach(card => {
   card.onclick = function() {
@@ -57,108 +52,6 @@ recipeCardElements.forEach(card => {
 
 force.bindHashes();
 
-let foodOptions = {
-  calories: '',
-  health: "",
-  diet: ""
-};
-
-const mealOptionSelector = (foodList, foodType, text) => {
-  document.querySelectorAll(foodList).forEach(function(e) {
-    e.onclick = function() {
-      foodOptions[
-        foodType
-      ] = `&${foodType}=${this.textContent.toLowerCase()}`;
-      if (this.textContent.toLowerCase() === "none") {
-        this.closest(".drop-btns").firstElementChild.textContent = text;
-     
-      } else {
-        console.log(this.textContent)
-        this.closest(
-          ".drop-btns"
-        ).firstElementChild.textContent = this.textContent.toUpperCase();
-       
-      }
-    };
-  });
-};
-
-
-
-
-
-//calories
-
-['none', "0-300", "300-500", "500-800", "800-1200", "1200-5000"].forEach(label => {
-  caloriesElement.innerHTML += `<li class="calories">${label}</li>`;
-});
-
-mealOptionSelector(".calories", "Calories", "CALORIES");
-
-//health
-
-let healthLabels = [
-  'none',
-  "alcohol-free",
-  "celery-free",
-  "crustcean-free",
-  "dairy-free",
-  "egg-free",
-  "fish-free",
-  "gluten-free",
-  "keto-friendly",
-  "No-sugar",
-  "peanut-free",
-  "pork-free",
-  "meat-free",
-  "sesame-free",
-  "shellfish-free",
-  "soy-free"
-];
-
-healthLabels.forEach(label => {
-  healthElement.innerHTML += `<li class="health">${label}</li>`;
-});
-
-mealOptionSelector(".health", "Health", "HEALTH");
-
-//diet
-
-let dietList = [
-  "None",
-  "balanced",
-  "high-fiber",
-  "High-Protein",
-  "Low-Carb",
-  "Low-Fat",
-  "Low-Sodium"
-];
-
-dietList.forEach(diet => {
-  dietTypeElement.innerHTML += `<li class="diet">${diet}</li>`;
-});
-
-mealOptionSelector(".diet", "diet", "DIET");
-
-dropBtns.forEach(button => {
-  let open = false;
-  button.onclick = function() {
-    open = !open;
-    if (open) {
-      this.children[1].style.display = "block";
-      setTimeout(() => {
-        this.children[1].firstElementChild.style.transform = "translate(0, 0)";
-      }, 50);
-    } else {
-      this.children[1].firstElementChild.style.transform =
-        "translate(0, -100%)";
-      setTimeout(() => {
-        this.children[1].style.display = "none";
-      }, 500);
-    }
-  };
-});
-
 searchForm.addEventListener("submit", function(e) {
   e.preventDefault();
   searchRecipes(this.firstElementChild.value);
@@ -166,19 +59,15 @@ searchForm.addEventListener("submit", function(e) {
 });
 
 const searchRecipes = searchQuery => {
-  for (let option in foodOptions) {
-    if (/=none/.test(foodOptions[option])) foodOptions[option] = '';
-  }
-
-  const recipes = recipeData(searchQuery, foodOptions);
+  const recipes = recipeData(searchQuery);
 
   recipes
     .then(data => {
       if (!data.length) {
-        //searchRecipes('chinese');
+        searchRecipes("chinese");
         alert("No Results found!");
       }
-      resultCard(data, getCardInformation);
+      resultCard(data);
     })
     .catch(err => {
       console.log(err);
@@ -195,7 +84,7 @@ mealSearchingButtons.forEach(x => {
   };
 });
 
-const resultCard = (recipes, callback) => {
+const resultCard = recipes => {
   resultsCardsWrap.innerHTML = "";
 
   for (let i = 0; i < recipes.length; i++) {
@@ -208,7 +97,9 @@ const resultCard = (recipes, callback) => {
     let image = recipes[i].image;
     let source = recipes[i].source;
     let calories = recipes[i].calories.toString().match(/\d+/)[0];
+    let url = recipes[i].url
     resultsCardsWrap.innerHTML += `
+   
   <div 
   class="recipe-card"
   
@@ -216,6 +107,7 @@ const resultCard = (recipes, callback) => {
    background-size:cover;
     background-position: center center;
     ">
+    <a href="${url}" target="_">
   <div class="cover"></div>
    <div class="source">
    <p>${source}</p>
@@ -232,20 +124,9 @@ const resultCard = (recipes, callback) => {
               </div>
           </div>
   </div>
+  </a>
   </div>
+  
   `;
   }
-  callback(recipes);
 };
-
-const getCardInformation = recipes => {
-  const resultCards = document.querySelectorAll(".recipe-card");
-  resultCards.forEach((card, index) => {
-    card.onclick = function() {
-      console.log(recipes[index]);
-      force.jump(scrollRecipeDetails);
-    };
-  });
-};
-
-const recipeDetailsLayout = () => {};
